@@ -1,0 +1,385 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "CCR_Result[0]",
+					"strict" : false
+				},
+				{
+					"name" : "CCR_Result[1]",
+					"strict" : false
+				},
+				{
+					"name" : "CCR_Result[3]",
+					"strict" : false
+				},
+				{
+					"name" : "flags[1]",
+					"strict" : false
+				},
+				{
+					"name" : "flags[3]",
+					"strict" : false
+				},
+				{
+					"name" : "IR_Out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "IR_Out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "IR_Out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "IR_Out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "IR_Out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "IR_Out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "IR_Out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "IR_Out[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Address[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Address[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Address[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Address[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Address[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Address[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Address[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Address[7]",
+					"strict" : false
+				},
+				{
+					"name" : "To_Memory[0]",
+					"strict" : false
+				},
+				{
+					"name" : "To_Memory[1]",
+					"strict" : false
+				},
+				{
+					"name" : "To_Memory[2]",
+					"strict" : false
+				},
+				{
+					"name" : "To_Memory[3]",
+					"strict" : false
+				},
+				{
+					"name" : "To_Memory[4]",
+					"strict" : false
+				},
+				{
+					"name" : "To_Memory[5]",
+					"strict" : false
+				},
+				{
+					"name" : "To_Memory[6]",
+					"strict" : false
+				},
+				{
+					"name" : "To_Memory[7]",
+					"strict" : false
+				},
+				{
+					"name" : "BUS1_1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "BUS1_1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "BUS1_1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "BUS1_1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "BUS1_1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "BUS1_1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "BUS1_1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "BUS1_1[7]",
+					"strict" : false
+				},
+				{
+					"name" : "BUS2_2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "BUS2_2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "BUS2_2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "BUS2_2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "BUS2_2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "BUS2_2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "BUS2_2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "BUS2_2[7]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_C[0]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_C[1]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_C[2]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_C[3]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_C[4]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_C[5]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_C[6]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_C[7]",
+					"strict" : false
+				},
+				{
+					"name" : "A_A[0]",
+					"strict" : false
+				},
+				{
+					"name" : "A_A[1]",
+					"strict" : false
+				},
+				{
+					"name" : "A_A[2]",
+					"strict" : false
+				},
+				{
+					"name" : "A_A[3]",
+					"strict" : false
+				},
+				{
+					"name" : "A_A[4]",
+					"strict" : false
+				},
+				{
+					"name" : "A_A[5]",
+					"strict" : false
+				},
+				{
+					"name" : "A_A[6]",
+					"strict" : false
+				},
+				{
+					"name" : "A_A[7]",
+					"strict" : false
+				},
+				{
+					"name" : "B_B[0]",
+					"strict" : false
+				},
+				{
+					"name" : "B_B[1]",
+					"strict" : false
+				},
+				{
+					"name" : "B_B[2]",
+					"strict" : false
+				},
+				{
+					"name" : "B_B[3]",
+					"strict" : false
+				},
+				{
+					"name" : "B_B[4]",
+					"strict" : false
+				},
+				{
+					"name" : "B_B[5]",
+					"strict" : false
+				},
+				{
+					"name" : "B_B[6]",
+					"strict" : false
+				},
+				{
+					"name" : "B_B[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_Sel[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_Sel[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_Sel[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_Sel[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Bus1_Sel[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Bus1_Sel[1]",
+					"strict" : false
+				},
+				{
+					"name" : "From_Memory[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Bus2_Sel[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Bus2_Sel[1]",
+					"strict" : false
+				},
+				{
+					"name" : "From_Memory[1]",
+					"strict" : false
+				},
+				{
+					"name" : "From_Memory[2]",
+					"strict" : false
+				},
+				{
+					"name" : "From_Memory[3]",
+					"strict" : false
+				},
+				{
+					"name" : "From_Memory[4]",
+					"strict" : false
+				},
+				{
+					"name" : "From_Memory[5]",
+					"strict" : false
+				},
+				{
+					"name" : "From_Memory[6]",
+					"strict" : false
+				},
+				{
+					"name" : "From_Memory[7]",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
+					"strict" : false
+				},
+				{
+					"name" : "RST",
+					"strict" : false
+				},
+				{
+					"name" : "CCR_Load",
+					"strict" : false
+				},
+				{
+					"name" : "B_Load",
+					"strict" : false
+				},
+				{
+					"name" : "A_Load",
+					"strict" : false
+				},
+				{
+					"name" : "PC_Load",
+					"strict" : false
+				},
+				{
+					"name" : "PC_Inc",
+					"strict" : false
+				},
+				{
+					"name" : "IR_Load",
+					"strict" : false
+				},
+				{
+					"name" : "MAR_Load",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

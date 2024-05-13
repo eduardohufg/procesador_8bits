@@ -1,0 +1,36 @@
+|bit_slice
+A => XORAIN.IN0
+B => XORBIN.IN0
+NA => XORAIN.IN1
+NA => ORINTCONT.IN0
+NB => XORBIN.IN1
+NB => ORINTCONT.IN1
+CIN => ORINTCONT.IN1
+AANDB => AND1.IN1
+NEGB => AND2.IN1
+NEGA => AND3.IN1
+AXORB => AND4.IN1
+AORB => ANDAUX.IN1
+AMASB => AND5.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|bit_slice|ha:I0
+a => s.IN0
+a => Cout.IN0
+b => s.IN1
+b => Cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|bit_slice|ha:I1
+a => s.IN0
+a => Cout.IN0
+b => s.IN1
+b => Cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,67 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity ALU is
+    Port (
+        A, B : in STD_LOGIC_VECTOR(7 downto 0);
+        Sel : in STD_LOGIC_VECTOR(3 downto 0); -- Reducido a 4 bits para simplificar
+        Out_ALU : out STD_LOGIC_VECTOR(7 downto 0);
+        ZeroFlag : out STD_LOGIC; -- Flag de resultado cero
+        CarryFlag : out STD_LOGIC; -- Flag de carry
+        OverflowFlag : out STD_LOGIC; -- Flag de overflow
+        NegativeFlag : out STD_LOGIC -- Flag de resultado negativo
+    );
+end ALU;
+
+architecture Behavioral of ALU is
+    signal TempResult : STD_LOGIC_VECTOR(7 downto 0);
+    signal Co, Ov, Bo : STD_LOGIC; -- Señales para Carry Out, Overflow y Borrow
+begin
+    -- Lógica de la ALU
+    with Sel select
+    TempResult <= 
+        A + B when "0000", -- Suma
+        A - B when "0001", -- Resta
+        A and B when "0010", -- AND
+        A or B when "0011", -- OR
+        A xor B when "0100", -- XOR
+        A + "00000001" when "0101", -- Incrementar A
+        B + "00000001" when "0110", -- Incrementar B
+        A - "00000001" when "0111", -- Decrementar A
+        B - "00000001" when "1000", -- Decrementar B
+        not A when "1001", -- NOT A
+        not B when "1010", -- NOT B
+        (others => '0') when others; -- Default a cero
+
+    -- Asignación del resultado y las banderas
+    Out_ALU <= TempResult;
+    ZeroFlag <= '1' when TempResult = (others => '0') else '0';
+    CarryFlag <= Co; -- Asignación de carry
+    OverflowFlag <= Ov; -- Asignación de overflow
+    NegativeFlag <= TempResult(7); -- El bit más significativo indica negativo
+
+    -- Procesos para calcular carry y overflow
+    process(A, B, Sel)
+    begin
+        -- Inicialización de flags
+        Co := '0';
+        Ov := '0';
+        Bo := '0';
+
+        case Sel is
+            when "0000" => -- Suma
+                Co := '0' when A(7) = B(7) and A(7) /= TempResult(7) else '1';
+                Ov := Co;
+            when "0001" => -- Resta
+                Bo := '1' when A < B else '0';
+                Ov := Bo;
+            when others =>
+                Co := '0';
+                Ov := '0';
+        end case;
+    end process;
+
+end Behavioral;
+

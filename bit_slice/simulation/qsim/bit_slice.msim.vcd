@@ -1,0 +1,171 @@
+$comment
+	File created using the following command:
+		vcd file bit_slice.msim.vcd -direction
+$end
+$date
+	Sun May 12 17:15:58 2024
+$end
+$version
+	ModelSim Version 10.5b
+$end
+$timescale
+	1ps
+$end
+
+$scope module bit_slice_vhd_vec_tst $end
+$var wire 1 ! A $end
+$var wire 1 " AANDB $end
+$var wire 1 # AMASB $end
+$var wire 1 $ AORB $end
+$var wire 1 % AXORB $end
+$var wire 1 & B $end
+$var wire 1 ' C $end
+$var wire 1 ( CIN $end
+$var wire 1 ) NA $end
+$var wire 1 * NB $end
+$var wire 1 + NEGA $end
+$var wire 1 , NEGB $end
+$var wire 1 - S $end
+
+$scope module i1 $end
+$var wire 1 . gnd $end
+$var wire 1 / vcc $end
+$var wire 1 0 unknown $end
+$var wire 1 1 devoe $end
+$var wire 1 2 devclrn $end
+$var wire 1 3 devpor $end
+$var wire 1 4 ww_devoe $end
+$var wire 1 5 ww_devclrn $end
+$var wire 1 6 ww_devpor $end
+$var wire 1 7 ww_A $end
+$var wire 1 8 ww_B $end
+$var wire 1 9 ww_NA $end
+$var wire 1 : ww_NB $end
+$var wire 1 ; ww_CIN $end
+$var wire 1 < ww_AANDB $end
+$var wire 1 = ww_NEGB $end
+$var wire 1 > ww_NEGA $end
+$var wire 1 ? ww_AXORB $end
+$var wire 1 @ ww_AORB $end
+$var wire 1 A ww_AMASB $end
+$var wire 1 B ww_C $end
+$var wire 1 C ww_S $end
+$var wire 1 D \CIN~combout\ $end
+$var wire 1 E \NB~combout\ $end
+$var wire 1 F \B~combout\ $end
+$var wire 1 G \XORBIN~combout\ $end
+$var wire 1 H \NA~combout\ $end
+$var wire 1 I \ORINTCONT~0_combout\ $end
+$var wire 1 J \A~combout\ $end
+$var wire 1 K \XORAIN~combout\ $end
+$var wire 1 L \C~0_combout\ $end
+$var wire 1 M \AANDB~combout\ $end
+$var wire 1 N \NEGA~combout\ $end
+$var wire 1 O \NEGB~combout\ $end
+$var wire 1 P \S~0_combout\ $end
+$var wire 1 Q \AORB~combout\ $end
+$var wire 1 R \S~1_combout\ $end
+$var wire 1 S \S~2_combout\ $end
+$var wire 1 T \AXORB~combout\ $end
+$var wire 1 U \AMASB~combout\ $end
+$var wire 1 V \S~3_combout\ $end
+$var wire 1 W \S~4_combout\ $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+1#
+0$
+0%
+0&
+1'
+0(
+1)
+1*
+0+
+0,
+1-
+0.
+1/
+x0
+11
+12
+13
+14
+15
+16
+07
+08
+19
+1:
+0;
+0<
+0=
+0>
+0?
+0@
+1A
+1B
+1C
+0D
+1E
+0F
+1G
+1H
+1I
+0J
+1K
+1L
+0M
+0N
+0O
+0P
+0Q
+1R
+0S
+0T
+1U
+1V
+1W
+$end
+#50000
+1&
+1!
+18
+17
+1J
+1F
+0G
+0K
+0L
+0R
+0B
+0'
+#110000
+0&
+08
+0F
+1G
+1L
+1P
+0V
+1B
+1'
+0W
+0C
+0-
+#180000
+0!
+07
+0J
+1K
+0P
+1R
+1V
+1W
+1C
+1-
+#1000000

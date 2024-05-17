@@ -1,0 +1,11 @@
+Fitter Status : Successful - Mon Apr 22 12:35:00 2024
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : puertos_salida
+Top-level Entity Name : puertos_salida
+Family : MAX II
+Device : EPM1270F256C3
+Timing Models : Final
+Total logic elements : 152 / 1,270 ( 12 % )
+Total pins : 143 / 212 ( 67 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

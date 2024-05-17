@@ -1,0 +1,66 @@
+-- Procesador RISC de 8 bits
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+entity CPU is
+    port (
+        CLK, RST: in std_logic;
+        port_in_00, port_in_01, port_in_02, port_in_03: in std_logic_vector(7 downto 0);
+        port_in_04, port_in_05, port_in_06, port_in_07: in std_logic_vector(7 downto 0);
+        port_in_08, port_in_09, port_in_10, port_in_11: in std_logic_vector(7 downto 0);
+        port_in_12, port_in_13, port_in_14, port_in_15: in std_logic_vector(7 downto 0);
+        port_out_00, port_out_01, port_out_02, port_out_03: out std_logic_vector(7 downto 0);
+        port_out_04, port_out_05, port_out_06, port_out_07: out std_logic_vector(7 downto 0);
+        port_out_08, port_out_09, port_out_10, port_out_11: out std_logic_vector(7 downto 0);
+        port_out_12, port_out_13, port_out_14, port_out_15: out std_logic_vector(7 downto 0)
+    );
+end entity;
+
+architecture ARC of CPU is
+    component MEMORIA is
+        PORT(CLK, RST, WR : IN STD_LOGIC;
+			ADDRESS: IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+			DATA_IN: IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+			P_IN_00, P_IN_01, P_IN_02, P_IN_03 : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+			P_IN_04, P_IN_05, P_IN_06, P_IN_07 : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+			P_IN_08, P_IN_09, P_IN_10, P_IN_11 : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+			P_IN_12, P_IN_13, P_IN_14, P_IN_15 : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+			DATA_OUT: OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+			P_OUT_00, P_OUT_01, P_OUT_02, P_OUT_03 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+			P_OUT_04, P_OUT_05, P_OUT_06, P_OUT_07 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+			P_OUT_08, P_OUT_09, P_OUT_10, P_OUT_11 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+			P_OUT_12, P_OUT_13, P_OUT_14, P_OUT_15 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0));
+    end component;
+
+    component CPU is
+        port (
+            CLK, RST: in std_logic;
+            From_Memory: in std_logic_vector(7 downto 0);
+            Writ: out std_logic;
+            Address, To_Memory: out std_logic_vector(7 downto 0)
+        );
+    end component;
+
+    signal address, Data1, Data2: std_logic_vector(7 downto 0);
+    signal writ: std_logic;
+
+begin
+    C1: CPU port map (
+        CLK, RST, Data1, writ, address, Data2
+    );
+
+    C2: Memoria port map (
+        CLK, RST, writ, address, Data2,
+        port_in_00, port_in_01, port_in_02, port_in_03,
+        port_in_04, port_in_05, port_in_06, port_in_07,
+        port_in_08, port_in_09, port_in_10, port_in_11,
+        port_in_12, port_in_13, port_in_14, port_in_15,
+        Data1,
+        port_out_00, port_out_01, port_out_02, port_out_03,
+        port_out_04, port_out_05, port_out_06, port_out_07,
+        port_out_08, port_out_09, port_out_10, port_out_11,
+        port_out_12, port_out_13, port_out_14, port_out_15
+    );
+end architecture ARC;

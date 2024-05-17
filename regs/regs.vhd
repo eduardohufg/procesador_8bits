@@ -17,8 +17,8 @@ begin
     A: process(CLK, RST)
     begin
         if RST = '1' then
-            A_reg <= (others => '0');
-        elsif rising_edge(CLK) then
+            A_reg <= x"00";
+        elsif (CLK'event and CLK = '1') then
             if A_load = '1' then
                 A_reg <= BUS_2;
             end if;
@@ -28,8 +28,8 @@ begin
     B: process(CLK, RST)
     begin
         if RST = '1' then
-            B_reg <= (others => '0');
-        elsif rising_edge(CLK) then
+            B_reg <= x"00";
+        elsif (CLK'event and CLK = '1') then
             if B_load = '1' then
                 B_reg <= BUS_2;
             end if;
@@ -39,8 +39,8 @@ begin
     CCR: process(CLK, RST)
     begin
         if RST = '1' then
-            CCR_reg <= (others => '0');
-        elsif rising_edge(CLK) then
+            CCR_reg <= x"0";
+        elsif (CLK'event and CLK = '1') then
             if CCR_load = '1' then
                 CCR_reg <= CCR_in;
             end if;
@@ -50,8 +50,8 @@ begin
     IR: process(CLK, RST)
     begin
         if RST = '1' then
-            IR_reg <= (others => '0');
-        elsif rising_edge(CLK) then
+            IR_reg <= x"00";
+        elsif (CLK'event and CLK = '1') then
             if IR_load = '1' then
                 IR_reg <= BUS_2;
             end if;
@@ -61,8 +61,8 @@ begin
     MAR: process(CLK, RST)
     begin
         if RST = '1' then
-            MAR_reg <= (others => '0');
-        elsif rising_edge(CLK) then
+            MAR_reg <= x"00";
+        elsif (CLK'event and CLK = '1') then
             if MAR_load = '1' then
                 MAR_reg <= BUS_2;
             end if;

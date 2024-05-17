@@ -1,0 +1,126 @@
+library IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY mestados_p IS
+	PORT(
+			CLK, START, RST: IN STD_LOGIC;
+			CCR_RESULT : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+			IR: IN STD_LOGIC_VECTOR(7 DOWNTO 0):
+			IR_LOAD, MAR_LOAD, PC_LOAD, PC_INC, A_LOAD, B_LOAD, CCR_LOAD, WR: OUT STD_LOGIC;
+			ALU_SEL: OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+			BUS2_SEL, BUS1_SEL: OUT STD_LOGIC_VECTOR(1 DOWNTO 0)
+	);
+END mestados_p;
+
+ARCHITECTURE RTL OF mestados_p IS
+	CONSTANT PC: STD_LOGIC_VECTOR := "00";
+	CONSTANT A: STD_LOGIC_VECTOR := "01";
+	CONSTANT B: STD_LOGIC_VECTOR := "10";
+	CONSTANT ALU: STD_LOGIC_VECTOR := "00";
+	CONSTANT BUS_1: STD_LOGIC_VECTOR := "10";
+	CONSTANT FROM_MEMORY: STD_LOGIC_VECTOR := "10";
+	
+	
+	type estados is (TIEMPO, IDLE, FETCH_1, FETCH_2, DECODE, LOAD_INM_A1, LOAD_INM_A2, LOAD_INM_A3
+
+	);
+	
+	SIGNAL EDO, EDO_F0: estados;
+	
+	BEGIN 
+		P1: process (CLK, START)
+			BEGIN
+				IF(RST = '1') THEN
+					EDO <= IDLE;
+				ELSIF (CLK'EVENT AND CLK = '1') THEN
+					IF(START = '1') THEN
+						EDO <= EDO_F0;
+					END IF;
+				END IF;
+			END PROcess P1;
+			
+		P2: process (CLK, EDO, START, IR, CCR_RESULT) IS
+			BEGIN	
+				CASE EDO IS
+					WHEN IDLE => IF START = '0' THEN
+						EDO_F0 <= IDLE;
+					ELSE
+						EDO_F0 <= FETCH_1;
+					END IF;
+					
+					WHEN FETCH_1 => EDO_F0 <= FETCH_2;
+					WHEN FETCH_2 => EDO_F0 <=DECODE;
+					
+					WHEN DECODE =>
+										IF IR = X"86" THEN 
+											EDO_F0 <= LOAD_INM_A1
+										ELSE
+											NULL;
+										END IF;
+										
+					WHEN LOAD_INM_A1 =>
+										EDO_F0 <= LOAD_INM_A2;
+					WHEN LOAD_INM_A2 =>
+										EDO_F0 <= LOAD_INM_A3;
+					WHEN LOAD_INM_A3 =>
+										EDO_F0 <= IDLE;
+										
+					WHEN OTHERS => NULL;
+					
+				END CASE;
+			END PROCess P2;
+			
+		P3: PROCess (EDO) IS
+			BEGIN
+				CASE EDO IS
+					WHEN IDLE => 	IR_LOAD <= '0';
+										MAR_LOAD <= '1';
+										PC_LOAD <= '0';
+										PC_INC <= '0';
+										A_LOAD <= '0';
+										B_LOAD <= '0';
+										ALU_SEL <= "0000";
+										CCR_LOAD <= '0';
+										BUS1_SEL <= PC;
+										BUS2_SEL <= BUS_1;
+										WR <= '0';
+										
+					WHEN FETCH_1 =>	IR_LOAD <= '0';
+											MAR_LOAD <= '0';
+											PC_LOAD <= '0';
+											PC_INC <= '1';
+											A_LOAD <= '0';
+											B_LOAD <= '0';
+											ALU_SEL <= "0000";
+											CCR_LOAD <= '0';
+											BUS1_SEL <= PC;
+											BUS2_SEL <= PC;
+											WR <= '0';
+											
+					WHEN FETCH_2 =>	IR_LOAD <= '1';
+											MAR_LOAD <= '0';
+											PC_LOAD <= '0';
+											PC_INC <= '0';
+											A_LOAD <= '0';
+											B_LOAD <= '0';
+											ALU_SEL <= "0000";
+											CCR_LOAD <= '0';
+											BUS1_SEL <= PC;
+											BUS2_SEL <= FROM_MEMORY;
+											WR <= '0';
+										
+										
+										
+				
+					
+				
+
+		
+	
+	
+	
+	
+	
+	
+	
+	

@@ -13,20 +13,27 @@ entity PC is
     );
 end PC;
 
+-- Cuando PC_inc está en uno, agrega 1 a la cuenta
+-- Cuando PC_load está en 1, la cuenta guarda lo que hay en el bus de datos
 architecture ARC of PC is
     signal cuenta : unsigned(7 downto 0);
+    signal prev_increment : std_logic := '0';
+
 begin
-    process (CLK, RST)
+    process (clk, RST)
     begin
         if RST = '1' then
             cuenta <= (others => '0');
-        elsif rising_edge(CLK) then
-            if PC_load = '1' then
-                cuenta <= unsigned(B2);
-            elsif PC_inc = '1' then
+        elsif rising_edge(clk) then
+            if PC_inc = '1' and prev_increment = '0' then
                 cuenta <= cuenta + 1;
+            elsif PC_load = '1' then
+                cuenta <= unsigned(B2);
             end if;
+            prev_increment <= PC_inc;
         end if;
     end process;
+
     PC_out <= std_logic_vector(cuenta);
 end ARC;
+

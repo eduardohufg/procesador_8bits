@@ -5,7 +5,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity ALU is
     Port (
         A, B : in STD_LOGIC_VECTOR(7 downto 0);
-        Sel : in STD_LOGIC_VECTOR(3 downto 0);
+        Sel : in STD_LOGIC_VECTOR(7 downto 0);
         Out_ALU : out STD_LOGIC_VECTOR(7 downto 0);
 		  Flags: out std_LOGIC_VECTOR(3 downto 0)
     );
@@ -18,31 +18,31 @@ begin
     process(A, B, Sel)
     begin
         case Sel is
-            when "0000" =>
+            when X"40" =>
                 TempResult <= std_logic_vector(resize(signed(A), 9) + resize(signed(B), 9));
-            when "0001" =>
+            when X"41" =>
                 TempResult <= std_logic_vector(resize(signed(A), 9) - resize(signed(B), 9));
-            when "0010" =>
+            when X"42" =>
                 TempResult(7 downto 0) <= A and B;
                 TempResult(8) <= '0';
-            when "0011" =>
+            when X"43" =>
                 TempResult(7 downto 0) <= A or B;
                 TempResult(8) <= '0';
-            when "0100" =>
+            when X"44" =>
                 TempResult(7 downto 0) <= A xor B;
                 TempResult(8) <= '0';
-            when "0101" =>
+            when X"45" =>
                 TempResult <= std_logic_vector(resize(signed(A), 9) + 1);
-            when "0110" =>
+            when X"46" =>
                 TempResult <= std_logic_vector(resize(signed(B), 9) + 1);
-            when "0111" =>
+            when X"47" =>
                 TempResult <= std_logic_vector(resize(signed(A), 9) - 1);
-            when "1000" =>
+            when X"48" =>
                 TempResult <= std_logic_vector(resize(signed(B), 9) - 1);
-            when "1001" =>
+            when X"50" =>
                 TempResult(7 downto 0) <= not A;
                 TempResult(8) <= '0';
-            when "1010" =>
+            when X"51" =>
                 TempResult(7 downto 0) <= not B;
                 TempResult(8) <= '0';
             when others =>
@@ -54,7 +54,7 @@ begin
 		   if TempResult(7 downto 0) = "00000000" then
 				flags(0) <= '1';
 			else
-				flags(1) <= '0';
+				flags(0) <= '0';
 			end if;
 
         flags(1) <= TempResult(8);

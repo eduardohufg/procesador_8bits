@@ -1,13 +1,12 @@
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
 
 entity data_path is
     port (
         CLK, RST: in std_logic;
         IR_Load, MAR_Load, PC_Load, PC_Inc, A_Load, B_Load, CCR_Load: in std_logic;
         Bus2_Sel, Bus1_Sel: in std_logic_vector(1 downto 0);
-        ALU_Sel: in std_logic_vector(3 downto 0);
+        ALU_Sel: in std_logic_vector(7 downto 0);
 		  From_Memory: in std_LOGIC_VECTOR(7 downto 0);
         CCR_Result, flags: out std_logic_vector(3 downto 0);
         IR_Out, Address, To_Memory: out std_logic_vector(7 downto 0);
@@ -40,7 +39,7 @@ architecture RTL of data_path is
     component ALU is
         port (
             A, B : in STD_LOGIC_VECTOR(7 downto 0);
-				Sel : in STD_LOGIC_VECTOR(3 downto 0);
+				Sel : in STD_LOGIC_VECTOR(7 downto 0);
 				Out_ALU : out STD_LOGIC_VECTOR(7 downto 0);
 				Flags: out std_LOGIC_VECTOR(3 downto 0)
         );
@@ -61,13 +60,13 @@ begin
         BUS1 <= MUX1_1 when "00",
                 MUX1_2 when "01",
                 MUX1_3 when "10",
-                (others => '-') when others;  -- Uso de '-' para casos no válidos
+                null when "11";  -- Uso de '-' para casos no válidos
 
     with Bus2_Sel select
         BUS2 <= MUX2_1 when "00",
                 BUS1 when "01",
                 From_Memory when "10",
-                (others => '-') when others;  -- Uso de '-' para casos no válidos
+                null when "11";  -- Uso de '-' para casos no válidos
 
     -- Asignaciones directas
     To_Memory <= BUS1;

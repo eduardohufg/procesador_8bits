@@ -1,0 +1,67 @@
+library IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+ENTITY puertos_salida IS
+
+	PORT(	CLK, RST, WR: IN STD_LOGIC;
+			ADDRESS     : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+			DATA_IN     : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+			P_OUT_00, P_OUT_01, P_OUT_02, P_OUT_03: OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+			P_OUT_04, P_OUT_05, P_OUT_06, P_OUT_07: OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+			P_OUT_08, P_OUT_09, P_OUT_10, P_OUT_11: OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+			P_OUT_12, P_OUT_13, P_OUT_14, P_OUT_15: OUT STD_LOGIC_VECTOR(7 DOWNTO 0));
+	END ENTITY;
+	
+ARCHITECTURE RTL OF puertos_salida IS
+	TYPE MEM_DATO IS ARRAY (0 TO 15) OF STD_LOGIC_VECTOR (7 DOWNTO 0);
+	SIGNAL RAM: MEM_DATO:=(X"00",X"00", X"00", X"00",X"00",X"00",X"00",X"00",
+									X"00",X"00", X"00", X"00",X"00",X"00",X"00",X"00");
+									
+	BEGIN
+		PROCESS(CLK,RST)
+			BEGIN
+			IF(RST='1') THEN
+				RAM(0) <= X"00";
+				RAM(1) <= X"00";
+				RAM(2) <= X"00";
+				RAM(3) <= X"00";
+				RAM(4) <= X"00";
+				RAM(5) <= X"00";
+				RAM(6) <= X"00";
+				RAM(7) <= X"00";
+				RAM(8) <= X"00";
+				RAM(9) <= X"00";
+				RAM(10) <= X"00";
+				RAM(11) <= X"00";
+				RAM(12) <= X"00";
+				RAM(13) <= X"00";
+				RAM(14) <= X"00";
+				RAM(15) <= X"00";
+			ELSIF(CLK 'EVENT AND CLK= '1') THEN
+				IF(WR='1') THEN
+					RAM(CONV_INTEGER(UNSIGNED(ADDRESS))) <=DATA_IN;
+				END IF;
+			END IF;
+			
+		END PROCESS;
+		
+		P_OUT_00 <= RAM(0);
+		P_OUT_01 <= RAM(1);
+		P_OUT_02 <= RAM(2);
+		P_OUT_03 <= RAM(3);
+		P_OUT_04 <= RAM(4);
+		P_OUT_05 <= RAM(5);
+		P_OUT_06 <= RAM(6);
+		P_OUT_07 <= RAM(7);
+		P_OUT_08 <= RAM(8);
+		P_OUT_09 <= RAM(9);
+		P_OUT_10 <= RAM(10);
+		P_OUT_11 <= RAM(11);
+		P_OUT_12 <= RAM(12);
+		P_OUT_13 <= RAM(13);
+		P_OUT_14 <= RAM(14);
+		P_OUT_15 <= RAM(15);
+		
+	END RTL;

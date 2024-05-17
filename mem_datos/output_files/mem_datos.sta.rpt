@@ -1,0 +1,536 @@
+Timing Analyzer report for mem_datos
+Mon Apr 22 10:47:35 2024
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'CLK'
+ 12. Hold: 'CLK'
+ 13. Setup Transfers
+ 14. Hold Transfers
+ 15. Report TCCS
+ 16. Report RSKM
+ 17. Unconstrained Paths Summary
+ 18. Clock Status Summary
+ 19. Unconstrained Input Ports
+ 20. Unconstrained Output Ports
+ 21. Unconstrained Input Ports
+ 22. Unconstrained Output Ports
+ 23. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; mem_datos                                           ;
+; Device Family         ; MAX II                                              ;
+; Device Name           ; EPM2210F256C3                                       ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; CLK        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLK } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Fmax Summary                                     ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 141.62 MHz ; 141.62 MHz      ; CLK        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Setup Summary                  ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; CLK   ; -6.061 ; -47.469       ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Hold Summary                  ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; CLK   ; 2.702 ; 0.000         ;
++-------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++--------------------------------+
+; Minimum Pulse Width Summary    ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; CLK   ; -2.289 ; -2.289        ;
++-------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Setup: 'CLK'                                                                                                ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; -6.061 ; RAM~747   ; DATA_OUT[3]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.853      ;
+; -6.055 ; RAM~70    ; DATA_OUT[6]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.847      ;
+; -5.973 ; RAM~330   ; DATA_OUT[2]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.765      ;
+; -5.970 ; RAM~407   ; DATA_OUT[7]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.762      ;
+; -5.946 ; RAM~446   ; DATA_OUT[6]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.738      ;
+; -5.915 ; RAM~591   ; DATA_OUT[7]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.707      ;
+; -5.884 ; RAM~66    ; DATA_OUT[2]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.676      ;
+; -5.878 ; RAM~648   ; DATA_OUT[0]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.670      ;
+; -5.869 ; RAM~404   ; DATA_OUT[4]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.661      ;
+; -5.857 ; RAM~23    ; DATA_OUT[7]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.649      ;
+; -5.847 ; RAM~603   ; DATA_OUT[3]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.639      ;
+; -5.839 ; RAM~681   ; DATA_OUT[1]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.631      ;
+; -5.828 ; RAM~625   ; DATA_OUT[1]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.620      ;
+; -5.824 ; RAM~757   ; DATA_OUT[5]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.616      ;
+; -5.798 ; RAM~684   ; DATA_OUT[4]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.590      ;
+; -5.785 ; RAM~652   ; DATA_OUT[4]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.577      ;
+; -5.775 ; RAM~222   ; DATA_OUT[6]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.567      ;
+; -5.751 ; RAM~31    ; DATA_OUT[7]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.543      ;
+; -5.750 ; RAM~462   ; DATA_OUT[6]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.542      ;
+; -5.749 ; RAM~651   ; DATA_OUT[3]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.541      ;
+; -5.717 ; RAM~48    ; DATA_OUT[0]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.509      ;
+; -5.713 ; RAM~214   ; DATA_OUT[6]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.505      ;
+; -5.710 ; RAM~584   ; DATA_OUT[0]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.502      ;
+; -5.709 ; RAM~22    ; DATA_OUT[6]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.501      ;
+; -5.705 ; RAM~759   ; DATA_OUT[7]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.497      ;
+; -5.704 ; RAM~78    ; DATA_OUT[6]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.496      ;
+; -5.684 ; RAM~328   ; DATA_OUT[0]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.476      ;
+; -5.678 ; RAM~751   ; DATA_OUT[7]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.470      ;
+; -5.663 ; RAM~438   ; DATA_OUT[6]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.455      ;
+; -5.648 ; RAM~153   ; DATA_OUT[1]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.440      ;
+; -5.647 ; RAM~500   ; DATA_OUT[4]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.439      ;
+; -5.633 ; RAM~683   ; DATA_OUT[3]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.425      ;
+; -5.630 ; RAM~695   ; DATA_OUT[7]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.422      ;
+; -5.621 ; RAM~595   ; DATA_OUT[3]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.413      ;
+; -5.610 ; RAM~716   ; DATA_OUT[4]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.402      ;
+; -5.600 ; RAM~783   ; DATA_OUT[7]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.392      ;
+; -5.595 ; RAM~358   ; DATA_OUT[6]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.387      ;
+; -5.593 ; RAM~560   ; DATA_OUT[0]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.385      ;
+; -5.577 ; RAM~21    ; DATA_OUT[5]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.369      ;
+; -5.570 ; RAM~508   ; DATA_OUT[4]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.362      ;
+; -5.557 ; RAM~587   ; DATA_OUT[3]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.349      ;
+; -5.547 ; RAM~727   ; DATA_OUT[7]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.339      ;
+; -5.545 ; RAM~176   ; DATA_OUT[0]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.337      ;
+; -5.544 ; RAM~20    ; DATA_OUT[4]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.336      ;
+; -5.541 ; RAM~54    ; DATA_OUT[6]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.333      ;
+; -5.539 ; RAM~62    ; DATA_OUT[6]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.331      ;
+; -5.538 ; RAM~395   ; DATA_OUT[3]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.330      ;
+; -5.537 ; RAM~469   ; DATA_OUT[5]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.329      ;
+; -5.535 ; RAM~116   ; DATA_OUT[4]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.327      ;
+; -5.530 ; RAM~192   ; DATA_OUT[0]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.322      ;
+; -5.508 ; RAM~685   ; DATA_OUT[5]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.300      ;
+; -5.507 ; RAM~312   ; DATA_OUT[0]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.299      ;
+; -5.506 ; RAM~627   ; DATA_OUT[3]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.298      ;
+; -5.502 ; RAM~87    ; DATA_OUT[7]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.294      ;
+; -5.502 ; RAM~568   ; DATA_OUT[0]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.294      ;
+; -5.495 ; RAM~723   ; DATA_OUT[3]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.287      ;
+; -5.495 ; RAM~326   ; DATA_OUT[6]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.287      ;
+; -5.491 ; RAM~777   ; DATA_OUT[1]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.283      ;
+; -5.491 ; RAM~719   ; DATA_OUT[7]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.283      ;
+; -5.487 ; RAM~262   ; DATA_OUT[6]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.279      ;
+; -5.484 ; RAM~535   ; DATA_OUT[7]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.276      ;
+; -5.483 ; RAM~132   ; DATA_OUT[4]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.275      ;
+; -5.478 ; RAM~215   ; DATA_OUT[7]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.270      ;
+; -5.475 ; RAM~746   ; DATA_OUT[2]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.267      ;
+; -5.467 ; RAM~47    ; DATA_OUT[7]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.259      ;
+; -5.467 ; RAM~628   ; DATA_OUT[4]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.259      ;
+; -5.465 ; RAM~650   ; DATA_OUT[2]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.257      ;
+; -5.463 ; RAM~194   ; DATA_OUT[2]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.255      ;
+; -5.456 ; RAM~293   ; DATA_OUT[5]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.248      ;
+; -5.455 ; RAM~649   ; DATA_OUT[1]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.247      ;
+; -5.451 ; RAM~445   ; DATA_OUT[5]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.243      ;
+; -5.449 ; RAM~332   ; DATA_OUT[4]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.241      ;
+; -5.442 ; RAM~616   ; DATA_OUT[0]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.234      ;
+; -5.442 ; RAM~528   ; DATA_OUT[0]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.234      ;
+; -5.440 ; RAM~662   ; DATA_OUT[6]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.232      ;
+; -5.433 ; RAM~564   ; DATA_OUT[4]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.225      ;
+; -5.433 ; RAM~287   ; DATA_OUT[7]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.225      ;
+; -5.431 ; RAM~657   ; DATA_OUT[1]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.223      ;
+; -5.421 ; RAM~693   ; DATA_OUT[5]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.213      ;
+; -5.420 ; RAM~398   ; DATA_OUT[6]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.212      ;
+; -5.418 ; RAM~532   ; DATA_OUT[4]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.210      ;
+; -5.414 ; RAM~624   ; DATA_OUT[0]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.206      ;
+; -5.404 ; RAM~477   ; DATA_OUT[5]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.196      ;
+; -5.398 ; RAM~599   ; DATA_OUT[7]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.190      ;
+; -5.398 ; RAM~470   ; DATA_OUT[6]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.190      ;
+; -5.394 ; RAM~278   ; DATA_OUT[6]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.186      ;
+; -5.385 ; RAM~660   ; DATA_OUT[4]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.177      ;
+; -5.380 ; RAM~93    ; DATA_OUT[5]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.172      ;
+; -5.379 ; RAM~178   ; DATA_OUT[2]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.171      ;
+; -5.376 ; RAM~538   ; DATA_OUT[2]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.168      ;
+; -5.366 ; RAM~246   ; DATA_OUT[6]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.158      ;
+; -5.352 ; RAM~250   ; DATA_OUT[2]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.144      ;
+; -5.352 ; RAM~531   ; DATA_OUT[3]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.144      ;
+; -5.350 ; RAM~748   ; DATA_OUT[4]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.142      ;
+; -5.350 ; RAM~724   ; DATA_OUT[4]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.142      ;
+; -5.349 ; RAM~355   ; DATA_OUT[3]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.141      ;
+; -5.349 ; RAM~554   ; DATA_OUT[2]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.141      ;
+; -5.344 ; RAM~94    ; DATA_OUT[6]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.136      ;
+; -5.334 ; RAM~64    ; DATA_OUT[0]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.126      ;
+; -5.330 ; RAM~593   ; DATA_OUT[1]~reg0 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.122      ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Hold: 'CLK'                                                                                                ;
++-------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; 2.702 ; RAM~512   ; DATA_OUT[0]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.840      ;
+; 2.722 ; RAM~210   ; DATA_OUT[2]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.860      ;
+; 2.980 ; RAM~305   ; DATA_OUT[1]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.118      ;
+; 3.047 ; RAM~401   ; DATA_OUT[1]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.185      ;
+; 3.246 ; RAM~336   ; DATA_OUT[0]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.384      ;
+; 3.302 ; RAM~281   ; DATA_OUT[1]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.440      ;
+; 3.356 ; RAM~497   ; DATA_OUT[1]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.494      ;
+; 3.401 ; RAM~156   ; DATA_OUT[4]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.539      ;
+; 3.405 ; RAM~760   ; DATA_OUT[0]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.543      ;
+; 3.447 ; RAM~79    ; DATA_OUT[7]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.585      ;
+; 3.448 ; RAM~385   ; DATA_OUT[1]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.586      ;
+; 3.452 ; RAM~187   ; DATA_OUT[3]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.590      ;
+; 3.465 ; RAM~46    ; DATA_OUT[6]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.603      ;
+; 3.468 ; RAM~496   ; DATA_OUT[0]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.606      ;
+; 3.491 ; RAM~255   ; DATA_OUT[7]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.629      ;
+; 3.497 ; RAM~291   ; DATA_OUT[3]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.635      ;
+; 3.508 ; RAM~356   ; DATA_OUT[4]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.646      ;
+; 3.508 ; RAM~484   ; DATA_OUT[4]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.646      ;
+; 3.518 ; RAM~111   ; DATA_OUT[7]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.656      ;
+; 3.540 ; RAM~218   ; DATA_OUT[2]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.678      ;
+; 3.554 ; RAM~513   ; DATA_OUT[1]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.692      ;
+; 3.561 ; RAM~264   ; DATA_OUT[0]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.699      ;
+; 3.580 ; RAM~321   ; DATA_OUT[1]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.718      ;
+; 3.589 ; RAM~465   ; DATA_OUT[1]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.727      ;
+; 3.593 ; RAM~499   ; DATA_OUT[3]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.731      ;
+; 3.603 ; RAM~520   ; DATA_OUT[0]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.741      ;
+; 3.618 ; RAM~41    ; DATA_OUT[1]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.756      ;
+; 3.622 ; RAM~234   ; DATA_OUT[2]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.760      ;
+; 3.655 ; RAM~766   ; DATA_OUT[6]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.793      ;
+; 3.658 ; RAM~419   ; DATA_OUT[3]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.796      ;
+; 3.664 ; RAM~696   ; DATA_OUT[0]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.802      ;
+; 3.674 ; RAM~126   ; DATA_OUT[6]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.812      ;
+; 3.676 ; RAM~403   ; DATA_OUT[3]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.814      ;
+; 3.702 ; RAM~467   ; DATA_OUT[3]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.840      ;
+; 3.726 ; RAM~550   ; DATA_OUT[6]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.864      ;
+; 3.740 ; RAM~226   ; DATA_OUT[2]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.878      ;
+; 3.776 ; RAM~408   ; DATA_OUT[0]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.914      ;
+; 3.777 ; RAM~413   ; DATA_OUT[5]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.915      ;
+; 3.790 ; RAM~762   ; DATA_OUT[2]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.928      ;
+; 3.798 ; RAM~468   ; DATA_OUT[4]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.936      ;
+; 3.807 ; RAM~383   ; DATA_OUT[7]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.945      ;
+; 3.818 ; RAM~400   ; DATA_OUT[0]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.956      ;
+; 3.835 ; RAM~384   ; DATA_OUT[0]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.973      ;
+; 3.837 ; RAM~199   ; DATA_OUT[7]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.975      ;
+; 3.856 ; RAM~346   ; DATA_OUT[2]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.994      ;
+; 3.857 ; RAM~261   ; DATA_OUT[5]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.995      ;
+; 3.866 ; RAM~473   ; DATA_OUT[1]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.004      ;
+; 3.875 ; RAM~57    ; DATA_OUT[1]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.013      ;
+; 3.877 ; RAM~223   ; DATA_OUT[7]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.015      ;
+; 3.881 ; RAM~736   ; DATA_OUT[0]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.019      ;
+; 3.884 ; RAM~275   ; DATA_OUT[3]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.022      ;
+; 3.902 ; RAM~378   ; DATA_OUT[2]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.040      ;
+; 3.906 ; RAM~271   ; DATA_OUT[7]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.044      ;
+; 3.917 ; RAM~325   ; DATA_OUT[5]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.055      ;
+; 3.923 ; RAM~229   ; DATA_OUT[5]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.061      ;
+; 3.929 ; RAM~433   ; DATA_OUT[1]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.067      ;
+; 3.931 ; RAM~285   ; DATA_OUT[5]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.069      ;
+; 3.933 ; RAM~498   ; DATA_OUT[2]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.071      ;
+; 3.944 ; RAM~337   ; DATA_OUT[1]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.082      ;
+; 3.945 ; RAM~263   ; DATA_OUT[7]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.083      ;
+; 3.949 ; RAM~207   ; DATA_OUT[7]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.087      ;
+; 3.949 ; RAM~167   ; DATA_OUT[7]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.087      ;
+; 3.950 ; RAM~71    ; DATA_OUT[7]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.088      ;
+; 3.950 ; RAM~30    ; DATA_OUT[6]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.088      ;
+; 3.950 ; RAM~272   ; DATA_OUT[0]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.088      ;
+; 3.951 ; RAM~674   ; DATA_OUT[2]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.089      ;
+; 3.955 ; RAM~444   ; DATA_OUT[4]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.093      ;
+; 3.962 ; RAM~509   ; DATA_OUT[5]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.100      ;
+; 3.971 ; RAM~774   ; DATA_OUT[6]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.109      ;
+; 3.973 ; RAM~237   ; DATA_OUT[5]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.111      ;
+; 3.974 ; RAM~637   ; DATA_OUT[5]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.112      ;
+; 3.982 ; RAM~203   ; DATA_OUT[3]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.120      ;
+; 3.989 ; RAM~679   ; DATA_OUT[7]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.127      ;
+; 3.998 ; RAM~515   ; DATA_OUT[3]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.136      ;
+; 4.014 ; RAM~195   ; DATA_OUT[3]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.152      ;
+; 4.028 ; RAM~315   ; DATA_OUT[3]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.166      ;
+; 4.034 ; RAM~638   ; DATA_OUT[6]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.172      ;
+; 4.052 ; RAM~141   ; DATA_OUT[5]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.190      ;
+; 4.069 ; RAM~273   ; DATA_OUT[1]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.207      ;
+; 4.090 ; RAM~260   ; DATA_OUT[4]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.228      ;
+; 4.102 ; RAM~698   ; DATA_OUT[2]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.240      ;
+; 4.115 ; RAM~504   ; DATA_OUT[0]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.253      ;
+; 4.115 ; RAM~557   ; DATA_OUT[5]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.253      ;
+; 4.118 ; RAM~174   ; DATA_OUT[6]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.256      ;
+; 4.123 ; RAM~265   ; DATA_OUT[1]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.261      ;
+; 4.137 ; RAM~274   ; DATA_OUT[2]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.275      ;
+; 4.139 ; RAM~764   ; DATA_OUT[4]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.277      ;
+; 4.141 ; RAM~368   ; DATA_OUT[0]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.279      ;
+; 4.147 ; RAM~737   ; DATA_OUT[1]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.285      ;
+; 4.150 ; RAM~73    ; DATA_OUT[1]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.288      ;
+; 4.151 ; RAM~136   ; DATA_OUT[0]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.289      ;
+; 4.152 ; RAM~742   ; DATA_OUT[6]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.290      ;
+; 4.165 ; RAM~547   ; DATA_OUT[3]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.303      ;
+; 4.165 ; RAM~699   ; DATA_OUT[3]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.303      ;
+; 4.167 ; RAM~569   ; DATA_OUT[1]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.305      ;
+; 4.169 ; RAM~369   ; DATA_OUT[1]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.307      ;
+; 4.173 ; RAM~472   ; DATA_OUT[0]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.311      ;
+; 4.173 ; RAM~501   ; DATA_OUT[5]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.311      ;
+; 4.188 ; RAM~436   ; DATA_OUT[4]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.326      ;
+; 4.194 ; RAM~213   ; DATA_OUT[5]~reg0 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.332      ;
++-------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLK        ; CLK      ; 768      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLK        ; CLK      ; 768      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 16    ; 16   ;
+; Unconstrained Input Port Paths  ; 6976  ; 6976 ;
+; Unconstrained Output Ports      ; 8     ; 8    ;
+; Unconstrained Output Port Paths ; 8     ; 8    ;
++---------------------------------+-------+------+
+
+
++-------------------------------------+
+; Clock Status Summary                ;
++--------+-------+------+-------------+
+; Target ; Clock ; Type ; Status      ;
++--------+-------+------+-------------+
+; CLK    ; CLK   ; Base ; Constrained ;
++--------+-------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; ADDREES[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ADDREES[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ADDREES[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ADDREES[3] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ADDREES[4] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ADDREES[5] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ADDREES[6] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DATA_IN[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DATA_IN[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DATA_IN[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DATA_IN[3] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DATA_IN[4] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DATA_IN[5] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DATA_IN[6] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DATA_IN[7] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WR         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; DATA_OUT[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DATA_OUT[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DATA_OUT[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DATA_OUT[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DATA_OUT[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DATA_OUT[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DATA_OUT[6] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DATA_OUT[7] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; ADDREES[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ADDREES[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ADDREES[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ADDREES[3] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ADDREES[4] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ADDREES[5] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ADDREES[6] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DATA_IN[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DATA_IN[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DATA_IN[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DATA_IN[3] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DATA_IN[4] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DATA_IN[5] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DATA_IN[6] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DATA_IN[7] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WR         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; DATA_OUT[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DATA_OUT[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DATA_OUT[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DATA_OUT[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DATA_OUT[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DATA_OUT[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DATA_OUT[6] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DATA_OUT[7] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Mon Apr 22 10:47:33 2024
+Info: Command: quartus_sta mem_datos -c mem_datos
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'mem_datos.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name CLK CLK
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -6.061
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -6.061             -47.469 CLK 
+Info (332146): Worst-case hold slack is 2.702
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     2.702               0.000 CLK 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 CLK 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4680 megabytes
+    Info: Processing ended: Mon Apr 22 10:47:35 2024
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

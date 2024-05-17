@@ -1,0 +1,113 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'CLK'
+Slack : -8.048
+TNS   : -969.045
+
+Type  : Slow 1200mV 85C Model Setup 'process_unit:C1|mestados_p:C1|EDO.ADD_AB'
+Slack : -4.252
+TNS   : -6.413
+
+Type  : Slow 1200mV 85C Model Setup 'process_unit:C1|mestados_p:C1|EDO.Decode'
+Slack : -3.994
+TNS   : -28.503
+
+Type  : Slow 1200mV 85C Model Hold 'process_unit:C1|mestados_p:C1|EDO.ADD_AB'
+Slack : -0.249
+TNS   : -0.363
+
+Type  : Slow 1200mV 85C Model Hold 'CLK'
+Slack : 0.388
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'process_unit:C1|mestados_p:C1|EDO.Decode'
+Slack : 0.560
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -276.870
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'process_unit:C1|mestados_p:C1|EDO.Decode'
+Slack : 0.407
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'process_unit:C1|mestados_p:C1|EDO.ADD_AB'
+Slack : 0.417
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'CLK'
+Slack : -7.119
+TNS   : -848.820
+
+Type  : Slow 1200mV 0C Model Setup 'process_unit:C1|mestados_p:C1|EDO.ADD_AB'
+Slack : -3.945
+TNS   : -5.904
+
+Type  : Slow 1200mV 0C Model Setup 'process_unit:C1|mestados_p:C1|EDO.Decode'
+Slack : -3.596
+TNS   : -24.739
+
+Type  : Slow 1200mV 0C Model Hold 'process_unit:C1|mestados_p:C1|EDO.ADD_AB'
+Slack : -0.087
+TNS   : -0.087
+
+Type  : Slow 1200mV 0C Model Hold 'CLK'
+Slack : 0.346
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'process_unit:C1|mestados_p:C1|EDO.Decode'
+Slack : 0.512
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -276.870
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'process_unit:C1|mestados_p:C1|EDO.ADD_AB'
+Slack : 0.431
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'process_unit:C1|mestados_p:C1|EDO.Decode'
+Slack : 0.459
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'CLK'
+Slack : -4.403
+TNS   : -459.759
+
+Type  : Fast 1200mV 0C Model Setup 'process_unit:C1|mestados_p:C1|EDO.ADD_AB'
+Slack : -2.367
+TNS   : -2.558
+
+Type  : Fast 1200mV 0C Model Setup 'process_unit:C1|mestados_p:C1|EDO.Decode'
+Slack : -1.976
+TNS   : -11.504
+
+Type  : Fast 1200mV 0C Model Hold 'process_unit:C1|mestados_p:C1|EDO.ADD_AB'
+Slack : 0.006
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CLK'
+Slack : 0.159
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'process_unit:C1|mestados_p:C1|EDO.Decode'
+Slack : 0.294
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -286.110
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'process_unit:C1|mestados_p:C1|EDO.Decode'
+Slack : 0.337
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'process_unit:C1|mestados_p:C1|EDO.ADD_AB'
+Slack : 0.371
+TNS   : 0.000
+
+------------------------------------------------------------

@@ -1,0 +1,41 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'CLK'
+Slack : -3.046
+TNS   : -26.729
+
+Type  : Setup 'EDO.Decode'
+Slack : -2.676
+TNS   : -22.626
+
+Type  : Setup 'EDO.ADD_AB'
+Slack : -0.174
+TNS   : -0.221
+
+Type  : Hold 'EDO.ADD_AB'
+Slack : -3.413
+TNS   : -12.396
+
+Type  : Hold 'EDO.Decode'
+Slack : -1.150
+TNS   : -3.325
+
+Type  : Hold 'CLK'
+Slack : -0.755
+TNS   : -6.958
+
+Type  : Minimum Pulse Width 'CLK'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'EDO.ADD_AB'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'EDO.Decode'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------

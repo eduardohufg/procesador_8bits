@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/12/2024 18:59:47"
+-- Generated on "05/17/2024 07:28:30"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          ALU
 -- 
@@ -35,22 +35,16 @@ ARCHITECTURE ALU_arch OF ALU_vhd_vec_tst IS
 -- signals                                                   
 SIGNAL A : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL B : STD_LOGIC_VECTOR(7 DOWNTO 0);
-SIGNAL CarryFlag : STD_LOGIC;
-SIGNAL NegativeFlag : STD_LOGIC;
+SIGNAL Flags : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL Out_ALU : STD_LOGIC_VECTOR(7 DOWNTO 0);
-SIGNAL OverflowFlag : STD_LOGIC;
 SIGNAL Sel : STD_LOGIC_VECTOR(3 DOWNTO 0);
-SIGNAL ZeroFlag : STD_LOGIC;
 COMPONENT ALU
 	PORT (
 	A : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
 	B : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-	CarryFlag : BUFFER STD_LOGIC;
-	NegativeFlag : BUFFER STD_LOGIC;
+	Flags : BUFFER STD_LOGIC_VECTOR(3 DOWNTO 0);
 	Out_ALU : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0);
-	OverflowFlag : BUFFER STD_LOGIC;
-	Sel : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-	ZeroFlag : BUFFER STD_LOGIC
+	Sel : IN STD_LOGIC_VECTOR(3 DOWNTO 0)
 	);
 END COMPONENT;
 BEGIN
@@ -59,28 +53,27 @@ BEGIN
 -- list connections between master ports and signals
 	A => A,
 	B => B,
-	CarryFlag => CarryFlag,
-	NegativeFlag => NegativeFlag,
+	Flags => Flags,
 	Out_ALU => Out_ALU,
-	OverflowFlag => OverflowFlag,
-	Sel => Sel,
-	ZeroFlag => ZeroFlag
+	Sel => Sel
 	);
 -- A[7]
 t_prcs_A_7: PROCESS
 BEGIN
-	A(7) <= '1';
-	WAIT FOR 50000 ps;
 	A(7) <= '0';
-	WAIT FOR 50000 ps;
-	A(7) <= '1';
-	WAIT FOR 100000 ps;
-	A(7) <= '0';
-	WAIT FOR 100000 ps;
+	WAIT FOR 200000 ps;
 	A(7) <= '1';
 	WAIT FOR 150000 ps;
 	A(7) <= '0';
-	WAIT FOR 300000 ps;
+	WAIT FOR 50000 ps;
+	A(7) <= '1';
+	WAIT FOR 100000 ps;
+	A(7) <= '0';
+	WAIT FOR 100000 ps;
+	A(7) <= '1';
+	WAIT FOR 50000 ps;
+	A(7) <= '0';
+	WAIT FOR 100000 ps;
 	A(7) <= '1';
 	WAIT FOR 100000 ps;
 	A(7) <= '0';
@@ -94,51 +87,53 @@ BEGIN
 	A(6) <= '1';
 	WAIT FOR 50000 ps;
 	A(6) <= '0';
-	WAIT FOR 50000 ps;
-	A(6) <= '1';
-	WAIT FOR 50000 ps;
-	A(6) <= '0';
-	WAIT FOR 50000 ps;
-	A(6) <= '1';
 	WAIT FOR 100000 ps;
-	A(6) <= '0';
-	WAIT FOR 200000 ps;
 	A(6) <= '1';
 	WAIT FOR 50000 ps;
 	A(6) <= '0';
 	WAIT FOR 50000 ps;
 	A(6) <= '1';
+	WAIT FOR 50000 ps;
+	A(6) <= '0';
 	WAIT FOR 150000 ps;
+	A(6) <= '1';
+	WAIT FOR 50000 ps;
 	A(6) <= '0';
 	WAIT FOR 50000 ps;
 	A(6) <= '1';
 	WAIT FOR 50000 ps;
 	A(6) <= '0';
+	WAIT FOR 100000 ps;
+	A(6) <= '1';
+	WAIT FOR 50000 ps;
+	A(6) <= '0';
+	WAIT FOR 50000 ps;
+	A(6) <= '1';
 WAIT;
 END PROCESS t_prcs_A_6;
 -- A[5]
 t_prcs_A_5: PROCESS
 BEGIN
 	A(5) <= '1';
-	WAIT FOR 250000 ps;
-	A(5) <= '0';
-	WAIT FOR 100000 ps;
-	A(5) <= '1';
-	WAIT FOR 100000 ps;
-	A(5) <= '0';
-	WAIT FOR 50000 ps;
-	A(5) <= '1';
-	WAIT FOR 100000 ps;
-	A(5) <= '0';
-	WAIT FOR 50000 ps;
-	A(5) <= '1';
-	WAIT FOR 100000 ps;
+	WAIT FOR 150000 ps;
 	A(5) <= '0';
 	WAIT FOR 50000 ps;
 	A(5) <= '1';
 	WAIT FOR 50000 ps;
 	A(5) <= '0';
+	WAIT FOR 150000 ps;
+	A(5) <= '1';
+	WAIT FOR 100000 ps;
+	A(5) <= '0';
+	WAIT FOR 100000 ps;
+	A(5) <= '1';
 	WAIT FOR 50000 ps;
+	A(5) <= '0';
+	WAIT FOR 50000 ps;
+	A(5) <= '1';
+	WAIT FOR 50000 ps;
+	A(5) <= '0';
+	WAIT FOR 150000 ps;
 	A(5) <= '1';
 	WAIT FOR 50000 ps;
 	A(5) <= '0';
@@ -147,18 +142,24 @@ END PROCESS t_prcs_A_5;
 -- A[4]
 t_prcs_A_4: PROCESS
 BEGIN
-	A(4) <= '0';
-	WAIT FOR 50000 ps;
 	A(4) <= '1';
-	WAIT FOR 150000 ps;
+	WAIT FOR 350000 ps;
 	A(4) <= '0';
-	WAIT FOR 200000 ps;
-	A(4) <= '1';
-	WAIT FOR 300000 ps;
-	A(4) <= '0';
-	WAIT FOR 50000 ps;
-	A(4) <= '1';
 	WAIT FOR 100000 ps;
+	A(4) <= '1';
+	WAIT FOR 50000 ps;
+	A(4) <= '0';
+	WAIT FOR 100000 ps;
+	A(4) <= '1';
+	WAIT FOR 50000 ps;
+	A(4) <= '0';
+	WAIT FOR 50000 ps;
+	A(4) <= '1';
+	WAIT FOR 50000 ps;
+	A(4) <= '0';
+	WAIT FOR 50000 ps;
+	A(4) <= '1';
+	WAIT FOR 50000 ps;
 	A(4) <= '0';
 	WAIT FOR 50000 ps;
 	A(4) <= '1';
@@ -169,31 +170,27 @@ END PROCESS t_prcs_A_4;
 -- A[3]
 t_prcs_A_3: PROCESS
 BEGIN
-	A(3) <= '0';
-	WAIT FOR 50000 ps;
-	A(3) <= '1';
-	WAIT FOR 50000 ps;
-	A(3) <= '0';
-	WAIT FOR 50000 ps;
 	A(3) <= '1';
 	WAIT FOR 150000 ps;
-	A(3) <= '0';
-	WAIT FOR 50000 ps;
-	A(3) <= '1';
-	WAIT FOR 50000 ps;
-	A(3) <= '0';
-	WAIT FOR 150000 ps;
-	A(3) <= '1';
-	WAIT FOR 50000 ps;
-	A(3) <= '0';
-	WAIT FOR 50000 ps;
-	A(3) <= '1';
-	WAIT FOR 100000 ps;
 	A(3) <= '0';
 	WAIT FOR 100000 ps;
 	A(3) <= '1';
 	WAIT FOR 50000 ps;
 	A(3) <= '0';
+	WAIT FOR 50000 ps;
+	A(3) <= '1';
+	WAIT FOR 50000 ps;
+	A(3) <= '0';
+	WAIT FOR 100000 ps;
+	A(3) <= '1';
+	WAIT FOR 50000 ps;
+	A(3) <= '0';
+	WAIT FOR 100000 ps;
+	A(3) <= '1';
+	WAIT FOR 50000 ps;
+	A(3) <= '0';
+	WAIT FOR 100000 ps;
+	A(3) <= '1';
 WAIT;
 END PROCESS t_prcs_A_3;
 -- A[2]
@@ -202,27 +199,31 @@ BEGIN
 	A(2) <= '1';
 	WAIT FOR 100000 ps;
 	A(2) <= '0';
-	WAIT FOR 350000 ps;
+	WAIT FOR 50000 ps;
 	A(2) <= '1';
+	WAIT FOR 50000 ps;
+	A(2) <= '0';
 	WAIT FOR 100000 ps;
+	A(2) <= '1';
+	WAIT FOR 50000 ps;
+	A(2) <= '0';
+	WAIT FOR 50000 ps;
+	A(2) <= '1';
+	WAIT FOR 50000 ps;
 	A(2) <= '0';
 	WAIT FOR 50000 ps;
 	A(2) <= '1';
 	WAIT FOR 100000 ps;
 	A(2) <= '0';
-	WAIT FOR 100000 ps;
+	WAIT FOR 200000 ps;
 	A(2) <= '1';
-	WAIT FOR 100000 ps;
-	A(2) <= '0';
 	WAIT FOR 50000 ps;
-	A(2) <= '1';
+	A(2) <= '0';
 WAIT;
 END PROCESS t_prcs_A_2;
 -- A[1]
 t_prcs_A_1: PROCESS
 BEGIN
-	A(1) <= '1';
-	WAIT FOR 50000 ps;
 	A(1) <= '0';
 	WAIT FOR 50000 ps;
 	A(1) <= '1';
@@ -230,11 +231,23 @@ BEGIN
 	A(1) <= '0';
 	WAIT FOR 50000 ps;
 	A(1) <= '1';
-	WAIT FOR 400000 ps;
+	WAIT FOR 50000 ps;
 	A(1) <= '0';
 	WAIT FOR 50000 ps;
 	A(1) <= '1';
+	WAIT FOR 50000 ps;
+	A(1) <= '0';
+	WAIT FOR 100000 ps;
+	A(1) <= '1';
+	WAIT FOR 50000 ps;
+	A(1) <= '0';
+	WAIT FOR 50000 ps;
+	A(1) <= '1';
+	WAIT FOR 50000 ps;
+	A(1) <= '0';
 	WAIT FOR 150000 ps;
+	A(1) <= '1';
+	WAIT FOR 100000 ps;
 	A(1) <= '0';
 	WAIT FOR 50000 ps;
 	A(1) <= '1';
@@ -243,24 +256,30 @@ END PROCESS t_prcs_A_1;
 -- A[0]
 t_prcs_A_0: PROCESS
 BEGIN
-	A(0) <= '1';
-	WAIT FOR 50000 ps;
 	A(0) <= '0';
-	WAIT FOR 100000 ps;
-	A(0) <= '1';
 	WAIT FOR 200000 ps;
+	A(0) <= '1';
+	WAIT FOR 50000 ps;
 	A(0) <= '0';
 	WAIT FOR 50000 ps;
 	A(0) <= '1';
-	WAIT FOR 100000 ps;
+	WAIT FOR 50000 ps;
 	A(0) <= '0';
-	WAIT FOR 100000 ps;
+	WAIT FOR 50000 ps;
 	A(0) <= '1';
-	WAIT FOR 150000 ps;
+	WAIT FOR 50000 ps;
+	A(0) <= '0';
+	WAIT FOR 50000 ps;
+	A(0) <= '1';
+	WAIT FOR 50000 ps;
 	A(0) <= '0';
 	WAIT FOR 50000 ps;
 	A(0) <= '1';
 	WAIT FOR 150000 ps;
+	A(0) <= '0';
+	WAIT FOR 150000 ps;
+	A(0) <= '1';
+	WAIT FOR 50000 ps;
 	A(0) <= '0';
 WAIT;
 END PROCESS t_prcs_A_0;
@@ -462,102 +481,28 @@ END PROCESS t_prcs_B_0;
 t_prcs_Sel_3: PROCESS
 BEGIN
 	Sel(3) <= '0';
-	WAIT FOR 150000 ps;
-	Sel(3) <= '1';
-	WAIT FOR 250000 ps;
-	Sel(3) <= '0';
-	WAIT FOR 50000 ps;
-	Sel(3) <= '1';
-	WAIT FOR 100000 ps;
-	Sel(3) <= '0';
-	WAIT FOR 50000 ps;
-	Sel(3) <= '1';
-	WAIT FOR 50000 ps;
-	Sel(3) <= '0';
-	WAIT FOR 50000 ps;
-	Sel(3) <= '1';
-	WAIT FOR 50000 ps;
-	Sel(3) <= '0';
-	WAIT FOR 150000 ps;
-	Sel(3) <= '1';
-	WAIT FOR 50000 ps;
-	Sel(3) <= '0';
 WAIT;
 END PROCESS t_prcs_Sel_3;
 -- Sel[2]
 t_prcs_Sel_2: PROCESS
 BEGIN
 	Sel(2) <= '1';
-	WAIT FOR 50000 ps;
-	Sel(2) <= '0';
-	WAIT FOR 200000 ps;
-	Sel(2) <= '1';
-	WAIT FOR 50000 ps;
-	Sel(2) <= '0';
-	WAIT FOR 100000 ps;
-	Sel(2) <= '1';
-	WAIT FOR 50000 ps;
-	Sel(2) <= '0';
-	WAIT FOR 150000 ps;
-	Sel(2) <= '1';
-	WAIT FOR 50000 ps;
-	Sel(2) <= '0';
-	WAIT FOR 50000 ps;
-	Sel(2) <= '1';
-	WAIT FOR 50000 ps;
-	Sel(2) <= '0';
-	WAIT FOR 50000 ps;
-	Sel(2) <= '1';
-	WAIT FOR 150000 ps;
+	WAIT FOR 70000 ps;
 	Sel(2) <= '0';
 WAIT;
 END PROCESS t_prcs_Sel_2;
 -- Sel[1]
 t_prcs_Sel_1: PROCESS
 BEGIN
-	Sel(1) <= '1';
-	WAIT FOR 50000 ps;
-	Sel(1) <= '0';
-	WAIT FOR 50000 ps;
-	Sel(1) <= '1';
-	WAIT FOR 100000 ps;
-	Sel(1) <= '0';
-	WAIT FOR 50000 ps;
-	Sel(1) <= '1';
-	WAIT FOR 50000 ps;
-	Sel(1) <= '0';
-	WAIT FOR 50000 ps;
-	Sel(1) <= '1';
-	WAIT FOR 50000 ps;
-	Sel(1) <= '0';
-	WAIT FOR 100000 ps;
-	Sel(1) <= '1';
-	WAIT FOR 150000 ps;
-	Sel(1) <= '0';
-	WAIT FOR 50000 ps;
-	Sel(1) <= '1';
-	WAIT FOR 250000 ps;
 	Sel(1) <= '0';
 WAIT;
 END PROCESS t_prcs_Sel_1;
 -- Sel[0]
 t_prcs_Sel_0: PROCESS
 BEGIN
-	Sel(0) <= '0';
-	WAIT FOR 50000 ps;
 	Sel(0) <= '1';
-	WAIT FOR 100000 ps;
+	WAIT FOR 70000 ps;
 	Sel(0) <= '0';
-	WAIT FOR 200000 ps;
-	Sel(0) <= '1';
-	WAIT FOR 50000 ps;
-	Sel(0) <= '0';
-	WAIT FOR 50000 ps;
-	Sel(0) <= '1';
-	WAIT FOR 350000 ps;
-	Sel(0) <= '0';
-	WAIT FOR 100000 ps;
-	Sel(0) <= '1';
 WAIT;
 END PROCESS t_prcs_Sel_0;
 END ALU_arch;

@@ -1,0 +1,67 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+
+entity ALUU is
+    port (
+        A, B: in std_logic_vector(7 downto 0);
+        Sel: in std_logic_vector(7 downto 0);
+        signals: out std_logic_vector(3 downto 0);
+        Out_ALU: out std_logic_vector(7 downto 0)
+    );
+end entity;
+
+architecture RLT of ALUU is
+    signal Suma_AB, Resta_AB, Inc_A, Inc_B, Dec_A, Dec_B, AandB, AorB, AxorB, ANot, BNot: std_logic_vector(7 downto 0);
+    signal CoS, Bo: std_logic;
+    -- Carry Out y Borrow
+    signal CoIn_A, CoIn_B, BoDec_A, BoDec_B: std_logic;
+    -- OverFlow
+    signal ovfSum_AB, ovfIn_A, ovfIn_B, ovfres_AB, ovfDec_A, ovfDec_B: std_logic;
+    -- Salida
+    signal Salida: std_logic_vector(7 downto 0);
+
+begin
+    process (A, B, Sel)
+    begin
+        -- Simulación de un sumador
+        Suma_AB := std_logic_vector(unsigned(A) + unsigned(B));
+        -- Simulación de una resta
+        Resta_AB := std_logic_vector(unsigned(A) - unsigned(B));
+        -- Incrementos
+        Inc_A := std_logic_vector(unsigned(A) + 1);
+        Inc_B := std_logic_vector(unsigned(B) + 1);
+        -- Decrementos
+        Dec_A := std_logic_vector(unsigned(A) - 1);
+        Dec_B := std_logic_vector(unsigned(B) - 1);
+        -- Operaciones lógicas
+        AandB := A and B;
+        AorB := A or B;
+        AxorB := A xor B;
+        ANot := not A;
+        BNot := not B;
+
+        -- Seleccionador de salida
+        with Sel select
+            Salida <=
+                Suma_AB when x"40",
+                Resta_AB when x"41",
+                AandB when x"42",
+                AorB when x"43",
+                AxorB when x"44",
+                Inc_A when x"45",
+                Inc_B when x"46",
+                Dec_A when x"47",
+                Dec_B when x"48",
+                ANot when x"49",
+                BNot when x"4A",
+                "00000000" when others;
+    end process;
+
+    -- Salida y señales de estado
+    Out_ALU <= Salida;
+    signals(0) <= CoS; -- Ejemplo de asignación de señales de estado
+    signals(1) <= Bo;
+    signals(2) <= '0'; -- Placeholder para el Zero flag
+    signals(3) <= '0'; -- Placeholder para el Negative flag
+end architecture;

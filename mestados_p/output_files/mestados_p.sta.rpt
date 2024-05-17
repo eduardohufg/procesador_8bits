@@ -1,0 +1,874 @@
+Timing Analyzer report for mestados_p
+Wed May 15 00:04:24 2024
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'CLK'
+ 12. Setup: 'EDO.Decode'
+ 13. Setup: 'EDO.ADD_AB'
+ 14. Hold: 'EDO.ADD_AB'
+ 15. Hold: 'EDO.Decode'
+ 16. Hold: 'CLK'
+ 17. Setup Transfers
+ 18. Hold Transfers
+ 19. Report TCCS
+ 20. Report RSKM
+ 21. Unconstrained Paths Summary
+ 22. Clock Status Summary
+ 23. Unconstrained Input Ports
+ 24. Unconstrained Output Ports
+ 25. Unconstrained Input Ports
+ 26. Unconstrained Output Ports
+ 27. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; mestados_p                                          ;
+; Device Family         ; MAX II                                              ;
+; Device Name           ; EPM240T100C3                                        ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                 ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets        ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------+
+; CLK        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLK }        ;
+; EDO.ADD_AB ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { EDO.ADD_AB } ;
+; EDO.Decode ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { EDO.Decode } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------+
+
+
++---------------------------------------------------------------------+
+; Fmax Summary                                                        ;
++------------+-----------------+------------+-------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                    ;
++------------+-----------------+------------+-------------------------+
+; INF MHz    ; 146.5 MHz       ; EDO.ADD_AB ; limit due to hold check ;
+; 247.16 MHz ; 247.16 MHz      ; CLK        ;                         ;
++------------+-----------------+------------+-------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-------------------------------------+
+; Setup Summary                       ;
++------------+--------+---------------+
+; Clock      ; Slack  ; End Point TNS ;
++------------+--------+---------------+
+; CLK        ; -3.046 ; -26.729       ;
+; EDO.Decode ; -2.676 ; -22.626       ;
+; EDO.ADD_AB ; -0.174 ; -0.221        ;
++------------+--------+---------------+
+
+
++-------------------------------------+
+; Hold Summary                        ;
++------------+--------+---------------+
+; Clock      ; Slack  ; End Point TNS ;
++------------+--------+---------------+
+; EDO.ADD_AB ; -3.413 ; -12.396       ;
+; EDO.Decode ; -1.150 ; -3.325        ;
+; CLK        ; -0.755 ; -6.958        ;
++------------+--------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++-------------------------------------+
+; Minimum Pulse Width Summary         ;
++------------+--------+---------------+
+; Clock      ; Slack  ; End Point TNS ;
++------------+--------+---------------+
+; CLK        ; -2.289 ; -2.289        ;
+; EDO.ADD_AB ; 0.500  ; 0.000         ;
+; EDO.Decode ; 0.500  ; 0.000         ;
++------------+--------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Setup: 'CLK'                                                                                                     ;
++--------+-----------------+-----------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node       ; To Node         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------+-----------------+--------------+-------------+--------------+------------+------------+
+; -3.046 ; EDO.SUB_AB      ; EDO.IDLE        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.838      ;
+; -2.966 ; EDO.OR_AB       ; EDO.IDLE        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.758      ;
+; -2.951 ; EDO.AND_AB      ; EDO.IDLE        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.743      ;
+; -2.855 ; EDO.Load_inmA3  ; EDO.IDLE        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.647      ;
+; -2.840 ; EDO.XOR_AB      ; EDO.IDLE        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.632      ;
+; -2.687 ; EDO.JCC3        ; EDO.IDLE        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.479      ;
+; -2.636 ; EDO.Load_DIR_A5 ; EDO.IDLE        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.428      ;
+; -2.632 ; EDO.DEC_A       ; EDO.IDLE        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.424      ;
+; -2.549 ; EDO.Load_inmB   ; EDO.IDLE        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.341      ;
+; -2.521 ; EDO.INC_A       ; EDO.IDLE        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.313      ;
+; -2.510 ; EDO.JCC1_Z      ; EDO.JCC2        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.302      ;
+; -2.507 ; EDO.JCC1_V      ; EDO.JCC2        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.299      ;
+; -2.484 ; EDO.JCC4        ; EDO.IDLE        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.276      ;
+; -2.407 ; EDO.JCC1_N      ; EDO.JCC2        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.199      ;
+; -2.383 ; EDO.DEC_B       ; EDO.IDLE        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.175      ;
+; -2.359 ; EDO.JMP3        ; EDO.IDLE        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.151      ;
+; -2.300 ; EDO.JCC1_NN     ; EDO.JCC2        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.092      ;
+; -2.289 ; EDO.JCC1_NC     ; EDO.JCC2        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.081      ;
+; -2.185 ; EDO.JCC1_NZ     ; EDO.JCC2        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 2.977      ;
+; -2.175 ; EDO.Load_DIR_B  ; EDO.IDLE        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 2.967      ;
+; -2.151 ; EDO.NOT_A       ; EDO.IDLE        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 2.943      ;
+; -2.079 ; EDO.JCC1_NV     ; EDO.JCC2        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 2.871      ;
+; -2.044 ; EDO.NOT_B       ; EDO.IDLE        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 2.836      ;
+; -2.028 ; EDO.STOREA4     ; EDO.IDLE        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 2.820      ;
+; -2.027 ; EDO.INC_B       ; EDO.IDLE        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 2.819      ;
+; -1.928 ; EDO.STOREB      ; EDO.IDLE        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 2.720      ;
+; -1.917 ; EDO.Fetch2      ; EDO.Decode      ; CLK          ; CLK         ; 1.000        ; 0.000      ; 2.709      ;
+; -1.673 ; EDO.JCC1_C      ; EDO.JCC2        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 2.465      ;
+; -1.601 ; EDO.IDLE        ; EDO.IDLE        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 2.393      ;
+; -1.530 ; EDO.Load_inmA2  ; EDO.Load_inmB   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 2.322      ;
+; -1.482 ; EDO.STOREA2     ; EDO.STOREA3     ; CLK          ; CLK         ; 1.000        ; 0.000      ; 2.274      ;
+; -1.324 ; EDO.Load_DIR_A4 ; EDO.Load_DIR_B  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 2.116      ;
+; -1.323 ; EDO.Load_DIR_A4 ; EDO.Load_DIR_A5 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 2.115      ;
+; -1.291 ; EDO.Load_inmA2  ; EDO.Load_inmA3  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 2.083      ;
+; -1.225 ; EDO.STOREA3     ; EDO.STOREB      ; CLK          ; CLK         ; 1.000        ; 0.000      ; 2.017      ;
+; -1.211 ; EDO.STOREA      ; EDO.STOREA2     ; CLK          ; CLK         ; 1.000        ; 0.000      ; 2.003      ;
+; -1.128 ; EDO.JMP1        ; EDO.JMP2        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 1.920      ;
+; -1.121 ; EDO.IDLE        ; EDO.Fetch1      ; CLK          ; CLK         ; 1.000        ; 0.000      ; 1.913      ;
+; -1.114 ; EDO.JCC2        ; EDO.JCC3        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 1.906      ;
+; -0.989 ; EDO.Fetch1      ; EDO.Fetch2      ; CLK          ; CLK         ; 1.000        ; 0.000      ; 1.781      ;
+; -0.928 ; EDO.Load_DIR_A3 ; EDO.Load_DIR_A4 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 1.720      ;
+; -0.894 ; EDO.Load_inmA1  ; EDO.Load_inmA2  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 1.686      ;
+; -0.890 ; EDO.JMP2        ; EDO.JMP3        ; CLK          ; CLK         ; 1.000        ; 0.000      ; 1.682      ;
+; -0.790 ; EDO.ADD_AB      ; EDO.IDLE        ; EDO.ADD_AB   ; CLK         ; 0.500        ; 2.093      ; 3.410      ;
+; -0.467 ; EDO.Load_DIR_A2 ; EDO.Load_DIR_A3 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 1.259      ;
+; -0.465 ; EDO.Load_DIR_A  ; EDO.Load_DIR_A2 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 1.257      ;
+; -0.387 ; EDO.STOREA3     ; EDO.STOREA4     ; CLK          ; CLK         ; 1.000        ; 0.000      ; 1.179      ;
+; -0.290 ; EDO.ADD_AB      ; EDO.IDLE        ; EDO.ADD_AB   ; CLK         ; 1.000        ; 2.093      ; 3.410      ;
+; -0.224 ; EDO.Decode      ; EDO.JCC1_N      ; EDO.Decode   ; CLK         ; 0.500        ; 2.093      ; 2.844      ;
+; -0.223 ; EDO.Decode      ; EDO.JCC1_NV     ; EDO.Decode   ; CLK         ; 0.500        ; 2.093      ; 2.843      ;
+; -0.219 ; EDO.Decode      ; EDO.JCC1_NN     ; EDO.Decode   ; CLK         ; 0.500        ; 2.093      ; 2.839      ;
+; -0.219 ; EDO.Decode      ; EDO.JCC1_Z      ; EDO.Decode   ; CLK         ; 0.500        ; 2.093      ; 2.839      ;
+; -0.218 ; EDO.Decode      ; EDO.JCC1_V      ; EDO.Decode   ; CLK         ; 0.500        ; 2.093      ; 2.838      ;
+; -0.217 ; EDO.Decode      ; EDO.JCC1_NC     ; EDO.Decode   ; CLK         ; 0.500        ; 2.093      ; 2.837      ;
+; -0.116 ; EDO.Decode      ; EDO.JCC4        ; EDO.Decode   ; CLK         ; 0.500        ; 2.093      ; 2.736      ;
+; -0.051 ; EDO.Decode      ; EDO.INC_B       ; EDO.Decode   ; CLK         ; 0.500        ; 2.093      ; 2.671      ;
+; 0.161  ; EDO.Decode      ; EDO.JCC1_C      ; EDO.Decode   ; CLK         ; 0.500        ; 2.093      ; 2.459      ;
+; 0.234  ; EDO.Decode      ; EDO.Decode      ; EDO.Decode   ; CLK         ; 0.500        ; 2.093      ; 2.386      ;
+; 0.250  ; EDO.Decode      ; EDO.OR_AB       ; EDO.Decode   ; CLK         ; 0.500        ; 2.093      ; 2.370      ;
+; 0.257  ; EDO.Decode      ; EDO.JCC1_NZ     ; EDO.Decode   ; CLK         ; 0.500        ; 2.093      ; 2.363      ;
+; 0.276  ; EDO.Decode      ; EDO.JCC1_N      ; EDO.Decode   ; CLK         ; 1.000        ; 2.093      ; 2.844      ;
+; 0.277  ; EDO.Decode      ; EDO.JCC1_NV     ; EDO.Decode   ; CLK         ; 1.000        ; 2.093      ; 2.843      ;
+; 0.281  ; EDO.Decode      ; EDO.JCC1_NN     ; EDO.Decode   ; CLK         ; 1.000        ; 2.093      ; 2.839      ;
+; 0.281  ; EDO.Decode      ; EDO.JCC1_Z      ; EDO.Decode   ; CLK         ; 1.000        ; 2.093      ; 2.839      ;
+; 0.282  ; EDO.Decode      ; EDO.JCC1_V      ; EDO.Decode   ; CLK         ; 1.000        ; 2.093      ; 2.838      ;
+; 0.283  ; EDO.Decode      ; EDO.JCC1_NC     ; EDO.Decode   ; CLK         ; 1.000        ; 2.093      ; 2.837      ;
+; 0.384  ; EDO.Decode      ; EDO.JCC4        ; EDO.Decode   ; CLK         ; 1.000        ; 2.093      ; 2.736      ;
+; 0.386  ; EDO.Decode      ; EDO.DEC_B       ; EDO.Decode   ; CLK         ; 0.500        ; 2.093      ; 2.234      ;
+; 0.399  ; EDO.Decode      ; EDO.NOT_A       ; EDO.Decode   ; CLK         ; 0.500        ; 2.093      ; 2.221      ;
+; 0.402  ; EDO.Decode      ; EDO.NOT_B       ; EDO.Decode   ; CLK         ; 0.500        ; 2.093      ; 2.218      ;
+; 0.432  ; EDO.Decode      ; EDO.Load_DIR_A  ; EDO.Decode   ; CLK         ; 0.500        ; 2.093      ; 2.188      ;
+; 0.433  ; EDO.Decode      ; EDO.Load_inmA1  ; EDO.Decode   ; CLK         ; 0.500        ; 2.093      ; 2.187      ;
+; 0.449  ; EDO.Decode      ; EDO.INC_B       ; EDO.Decode   ; CLK         ; 1.000        ; 2.093      ; 2.671      ;
+; 0.570  ; EDO.Decode      ; EDO.JMP1        ; EDO.Decode   ; CLK         ; 0.500        ; 2.093      ; 2.050      ;
+; 0.623  ; EDO.Decode      ; EDO.STOREA      ; EDO.Decode   ; CLK         ; 0.500        ; 2.093      ; 1.997      ;
+; 0.661  ; EDO.Decode      ; EDO.JCC1_C      ; EDO.Decode   ; CLK         ; 1.000        ; 2.093      ; 2.459      ;
+; 0.734  ; EDO.Decode      ; EDO.Decode      ; EDO.Decode   ; CLK         ; 1.000        ; 2.093      ; 2.386      ;
+; 0.750  ; EDO.Decode      ; EDO.OR_AB       ; EDO.Decode   ; CLK         ; 1.000        ; 2.093      ; 2.370      ;
+; 0.757  ; EDO.Decode      ; EDO.JCC1_NZ     ; EDO.Decode   ; CLK         ; 1.000        ; 2.093      ; 2.363      ;
+; 0.886  ; EDO.Decode      ; EDO.DEC_B       ; EDO.Decode   ; CLK         ; 1.000        ; 2.093      ; 2.234      ;
+; 0.899  ; EDO.Decode      ; EDO.NOT_A       ; EDO.Decode   ; CLK         ; 1.000        ; 2.093      ; 2.221      ;
+; 0.901  ; EDO.Decode      ; EDO.SUB_AB      ; EDO.Decode   ; CLK         ; 0.500        ; 2.093      ; 1.719      ;
+; 0.902  ; EDO.Decode      ; EDO.NOT_B       ; EDO.Decode   ; CLK         ; 1.000        ; 2.093      ; 2.218      ;
+; 0.902  ; EDO.Decode      ; EDO.ADD_AB      ; EDO.Decode   ; CLK         ; 0.500        ; 2.093      ; 1.718      ;
+; 0.903  ; EDO.Decode      ; EDO.DEC_A       ; EDO.Decode   ; CLK         ; 0.500        ; 2.093      ; 1.717      ;
+; 0.906  ; EDO.Decode      ; EDO.INC_A       ; EDO.Decode   ; CLK         ; 0.500        ; 2.093      ; 1.714      ;
+; 0.908  ; EDO.Decode      ; EDO.XOR_AB      ; EDO.Decode   ; CLK         ; 0.500        ; 2.093      ; 1.712      ;
+; 0.909  ; EDO.Decode      ; EDO.AND_AB      ; EDO.Decode   ; CLK         ; 0.500        ; 2.093      ; 1.711      ;
+; 0.932  ; EDO.Decode      ; EDO.Load_DIR_A  ; EDO.Decode   ; CLK         ; 1.000        ; 2.093      ; 2.188      ;
+; 0.933  ; EDO.Decode      ; EDO.Load_inmA1  ; EDO.Decode   ; CLK         ; 1.000        ; 2.093      ; 2.187      ;
+; 1.070  ; EDO.Decode      ; EDO.JMP1        ; EDO.Decode   ; CLK         ; 1.000        ; 2.093      ; 2.050      ;
+; 1.123  ; EDO.Decode      ; EDO.STOREA      ; EDO.Decode   ; CLK         ; 1.000        ; 2.093      ; 1.997      ;
+; 1.401  ; EDO.Decode      ; EDO.SUB_AB      ; EDO.Decode   ; CLK         ; 1.000        ; 2.093      ; 1.719      ;
+; 1.402  ; EDO.Decode      ; EDO.ADD_AB      ; EDO.Decode   ; CLK         ; 1.000        ; 2.093      ; 1.718      ;
+; 1.403  ; EDO.Decode      ; EDO.DEC_A       ; EDO.Decode   ; CLK         ; 1.000        ; 2.093      ; 1.717      ;
+; 1.406  ; EDO.Decode      ; EDO.INC_A       ; EDO.Decode   ; CLK         ; 1.000        ; 2.093      ; 1.714      ;
+; 1.408  ; EDO.Decode      ; EDO.XOR_AB      ; EDO.Decode   ; CLK         ; 1.000        ; 2.093      ; 1.712      ;
+; 1.409  ; EDO.Decode      ; EDO.AND_AB      ; EDO.Decode   ; CLK         ; 1.000        ; 2.093      ; 1.711      ;
++--------+-----------------+-----------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Setup: 'EDO.Decode'                                                                                                ;
++--------+-----------------+-------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node       ; To Node           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------+-------------------+--------------+-------------+--------------+------------+------------+
+; -2.676 ; EDO.Fetch1      ; Bus2_Sel[1]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.481      ; 3.892      ;
+; -2.520 ; EDO.DEC_B       ; Bus1_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.471      ; 3.733      ;
+; -2.488 ; EDO.Load_inmA3  ; Bus2_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.490      ; 3.503      ;
+; -2.455 ; EDO.JCC4        ; Bus2_Sel[1]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.481      ; 3.671      ;
+; -2.408 ; EDO.SUB_AB      ; CCR_Load$latch    ; CLK          ; EDO.Decode  ; 1.000        ; 1.457      ; 3.595      ;
+; -2.381 ; EDO.IDLE        ; MAR_Load$latch    ; CLK          ; EDO.Decode  ; 1.000        ; 1.468      ; 3.590      ;
+; -2.381 ; EDO.IDLE        ; Bus1_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.471      ; 3.594      ;
+; -2.352 ; EDO.STOREA2     ; Bus2_Sel[1]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.481      ; 3.568      ;
+; -2.341 ; EDO.DEC_B       ; Bus2_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.490      ; 3.356      ;
+; -2.328 ; EDO.OR_AB       ; CCR_Load$latch    ; CLK          ; EDO.Decode  ; 1.000        ; 1.457      ; 3.515      ;
+; -2.321 ; EDO.Load_DIR_A3 ; Bus2_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.490      ; 3.336      ;
+; -2.320 ; EDO.JCC3        ; Bus2_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.490      ; 3.335      ;
+; -2.315 ; EDO.DEC_B       ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.495      ; 3.558      ;
+; -2.313 ; EDO.AND_AB      ; CCR_Load$latch    ; CLK          ; EDO.Decode  ; 1.000        ; 1.457      ; 3.500      ;
+; -2.309 ; EDO.SUB_AB      ; Bus2_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.490      ; 3.324      ;
+; -2.269 ; EDO.Load_DIR_A5 ; Bus2_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.490      ; 3.284      ;
+; -2.239 ; EDO.Fetch1      ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.495      ; 3.482      ;
+; -2.229 ; EDO.OR_AB       ; Bus2_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.490      ; 3.244      ;
+; -2.219 ; EDO.Load_inmA3  ; Bus2_Sel[1]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.481      ; 3.435      ;
+; -2.216 ; EDO.JCC1_Z      ; MAR_Load$latch    ; CLK          ; EDO.Decode  ; 1.000        ; 1.468      ; 3.425      ;
+; -2.216 ; EDO.JCC1_Z      ; Bus1_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.471      ; 3.429      ;
+; -2.214 ; EDO.AND_AB      ; Bus2_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.490      ; 3.229      ;
+; -2.213 ; EDO.JCC1_V      ; MAR_Load$latch    ; CLK          ; EDO.Decode  ; 1.000        ; 1.468      ; 3.422      ;
+; -2.213 ; EDO.JCC1_V      ; Bus1_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.471      ; 3.426      ;
+; -2.202 ; EDO.XOR_AB      ; CCR_Load$latch    ; CLK          ; EDO.Decode  ; 1.000        ; 1.457      ; 3.389      ;
+; -2.182 ; EDO.Load_inmB   ; Bus2_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.490      ; 3.197      ;
+; -2.181 ; EDO.NOT_B       ; Bus1_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.471      ; 3.394      ;
+; -2.180 ; EDO.Load_DIR_A5 ; A_Load$latch      ; CLK          ; EDO.Decode  ; 1.000        ; 1.502      ; 3.414      ;
+; -2.164 ; EDO.INC_B       ; Bus1_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.471      ; 3.377      ;
+; -2.122 ; EDO.STOREB      ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.495      ; 3.365      ;
+; -2.113 ; EDO.JCC1_N      ; MAR_Load$latch    ; CLK          ; EDO.Decode  ; 1.000        ; 1.468      ; 3.322      ;
+; -2.113 ; EDO.JCC1_N      ; Bus1_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.471      ; 3.326      ;
+; -2.112 ; EDO.STOREA      ; MAR_Load$latch    ; CLK          ; EDO.Decode  ; 1.000        ; 1.468      ; 3.321      ;
+; -2.112 ; EDO.STOREA      ; Bus1_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.471      ; 3.325      ;
+; -2.103 ; EDO.XOR_AB      ; Bus2_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.490      ; 3.118      ;
+; -2.052 ; EDO.Load_DIR_A3 ; Bus2_Sel[1]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.481      ; 3.268      ;
+; -2.051 ; EDO.JCC3        ; Bus2_Sel[1]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.481      ; 3.267      ;
+; -2.019 ; EDO.Load_inmA2  ; Bus2_Sel[1]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.481      ; 3.235      ;
+; -2.018 ; EDO.JCC4        ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.495      ; 3.261      ;
+; -2.006 ; EDO.JCC1_NN     ; MAR_Load$latch    ; CLK          ; EDO.Decode  ; 1.000        ; 1.468      ; 3.215      ;
+; -2.006 ; EDO.JCC1_NN     ; Bus1_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.471      ; 3.219      ;
+; -2.002 ; EDO.NOT_B       ; Bus2_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.490      ; 3.017      ;
+; -2.000 ; EDO.Load_DIR_A5 ; Bus2_Sel[1]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.481      ; 3.216      ;
+; -1.995 ; EDO.JCC1_NC     ; MAR_Load$latch    ; CLK          ; EDO.Decode  ; 1.000        ; 1.468      ; 3.204      ;
+; -1.995 ; EDO.JCC1_NC     ; Bus1_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.471      ; 3.208      ;
+; -1.994 ; EDO.DEC_A       ; CCR_Load$latch    ; CLK          ; EDO.Decode  ; 1.000        ; 1.457      ; 3.181      ;
+; -1.992 ; EDO.JMP3        ; Bus2_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.490      ; 3.007      ;
+; -1.985 ; EDO.INC_B       ; Bus2_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.490      ; 3.000      ;
+; -1.976 ; EDO.NOT_B       ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.495      ; 3.219      ;
+; -1.959 ; EDO.INC_B       ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.495      ; 3.202      ;
+; -1.942 ; EDO.DEC_B       ; B_Load$latch      ; CLK          ; EDO.Decode  ; 1.000        ; 1.502      ; 3.180      ;
+; -1.928 ; EDO.Load_inmA3  ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.495      ; 3.171      ;
+; -1.915 ; EDO.STOREA2     ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.495      ; 3.158      ;
+; -1.913 ; EDO.Load_inmB   ; Bus2_Sel[1]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.481      ; 3.129      ;
+; -1.902 ; EDO.JCC2        ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.495      ; 3.145      ;
+; -1.895 ; EDO.DEC_A       ; Bus2_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.490      ; 2.910      ;
+; -1.891 ; EDO.JCC1_NZ     ; MAR_Load$latch    ; CLK          ; EDO.Decode  ; 1.000        ; 1.468      ; 3.100      ;
+; -1.891 ; EDO.JCC1_NZ     ; Bus1_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.471      ; 3.104      ;
+; -1.883 ; EDO.INC_A       ; CCR_Load$latch    ; CLK          ; EDO.Decode  ; 1.000        ; 1.457      ; 3.070      ;
+; -1.881 ; EDO.STOREB      ; Bus2_Sel[1]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.481      ; 3.097      ;
+; -1.874 ; EDO.SUB_AB      ; A_Load$latch      ; CLK          ; EDO.Decode  ; 1.000        ; 1.502      ; 3.108      ;
+; -1.864 ; EDO.Load_DIR_A  ; MAR_Load$latch    ; CLK          ; EDO.Decode  ; 1.000        ; 1.468      ; 3.073      ;
+; -1.864 ; EDO.Load_DIR_A  ; Bus1_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.471      ; 3.077      ;
+; -1.808 ; EDO.Load_DIR_B  ; Bus2_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.490      ; 2.823      ;
+; -1.794 ; EDO.OR_AB       ; A_Load$latch      ; CLK          ; EDO.Decode  ; 1.000        ; 1.502      ; 3.028      ;
+; -1.785 ; EDO.JCC1_NV     ; MAR_Load$latch    ; CLK          ; EDO.Decode  ; 1.000        ; 1.468      ; 2.994      ;
+; -1.785 ; EDO.JCC1_NV     ; Bus1_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.471      ; 2.998      ;
+; -1.784 ; EDO.INC_A       ; Bus2_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.490      ; 2.799      ;
+; -1.779 ; EDO.AND_AB      ; A_Load$latch      ; CLK          ; EDO.Decode  ; 1.000        ; 1.502      ; 3.013      ;
+; -1.761 ; EDO.Load_DIR_A3 ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.495      ; 3.004      ;
+; -1.760 ; EDO.JCC3        ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.495      ; 3.003      ;
+; -1.756 ; EDO.Load_inmA1  ; MAR_Load$latch    ; CLK          ; EDO.Decode  ; 1.000        ; 1.468      ; 2.965      ;
+; -1.756 ; EDO.Load_inmA1  ; Bus1_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.471      ; 2.969      ;
+; -1.745 ; EDO.DEC_B       ; CCR_Load$latch    ; CLK          ; EDO.Decode  ; 1.000        ; 1.457      ; 2.932      ;
+; -1.735 ; EDO.Load_inmA3  ; A_Load$latch      ; CLK          ; EDO.Decode  ; 1.000        ; 1.502      ; 2.969      ;
+; -1.732 ; EDO.NOT_A       ; Bus2_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.490      ; 2.747      ;
+; -1.725 ; EDO.STOREA3     ; Bus2_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.490      ; 2.740      ;
+; -1.723 ; EDO.JMP3        ; Bus2_Sel[1]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.481      ; 2.939      ;
+; -1.709 ; EDO.Load_DIR_A5 ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.495      ; 2.952      ;
+; -1.703 ; EDO.Load_DIR_A2 ; Bus2_Sel[1]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.481      ; 2.919      ;
+; -1.668 ; EDO.XOR_AB      ; A_Load$latch      ; CLK          ; EDO.Decode  ; 1.000        ; 1.502      ; 2.902      ;
+; -1.661 ; EDO.JCC2        ; Bus2_Sel[1]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.481      ; 2.877      ;
+; -1.640 ; EDO.JMP1        ; MAR_Load$latch    ; CLK          ; EDO.Decode  ; 1.000        ; 1.468      ; 2.849      ;
+; -1.640 ; EDO.JMP1        ; Bus1_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.471      ; 2.853      ;
+; -1.622 ; EDO.Load_inmB   ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.495      ; 2.865      ;
+; -1.603 ; EDO.NOT_B       ; B_Load$latch      ; CLK          ; EDO.Decode  ; 1.000        ; 1.502      ; 2.841      ;
+; -1.599 ; EDO.JMP2        ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.495      ; 2.842      ;
+; -1.586 ; EDO.INC_B       ; B_Load$latch      ; CLK          ; EDO.Decode  ; 1.000        ; 1.502      ; 2.824      ;
+; -1.582 ; EDO.Load_inmA2  ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.495      ; 2.825      ;
+; -1.550 ; EDO.Load_DIR_B  ; B_Load$latch      ; CLK          ; EDO.Decode  ; 1.000        ; 1.502      ; 2.788      ;
+; -1.539 ; EDO.Load_DIR_B  ; Bus2_Sel[1]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.481      ; 2.755      ;
+; -1.513 ; EDO.NOT_A       ; CCR_Load$latch    ; CLK          ; EDO.Decode  ; 1.000        ; 1.457      ; 2.700      ;
+; -1.460 ; EDO.DEC_A       ; A_Load$latch      ; CLK          ; EDO.Decode  ; 1.000        ; 1.502      ; 2.694      ;
+; -1.456 ; EDO.STOREA3     ; Bus2_Sel[1]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.481      ; 2.672      ;
+; -1.432 ; EDO.JMP3        ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.495      ; 2.675      ;
+; -1.406 ; EDO.NOT_B       ; CCR_Load$latch    ; CLK          ; EDO.Decode  ; 1.000        ; 1.457      ; 2.593      ;
+; -1.389 ; EDO.INC_B       ; CCR_Load$latch    ; CLK          ; EDO.Decode  ; 1.000        ; 1.457      ; 2.576      ;
+; -1.379 ; EDO.JCC1_C      ; MAR_Load$latch    ; CLK          ; EDO.Decode  ; 1.000        ; 1.468      ; 2.588      ;
+; -1.379 ; EDO.JCC1_C      ; Bus1_Sel[0]$latch ; CLK          ; EDO.Decode  ; 1.000        ; 1.471      ; 2.592      ;
+; -1.375 ; EDO.STOREA4     ; wr$latch          ; CLK          ; EDO.Decode  ; 1.000        ; 1.006      ; 2.002      ;
++--------+-----------------+-------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Setup: 'EDO.ADD_AB'                                                                                             ;
++--------+------------+---------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node  ; To Node             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------+---------------------+--------------+-------------+--------------+------------+------------+
+; -0.174 ; EDO.SUB_AB ; ALU_Select[3]$latch ; CLK          ; EDO.ADD_AB  ; 0.500        ; 3.448      ; 2.791      ;
+; -0.094 ; EDO.OR_AB  ; ALU_Select[3]$latch ; CLK          ; EDO.ADD_AB  ; 0.500        ; 3.448      ; 2.711      ;
+; -0.079 ; EDO.AND_AB ; ALU_Select[3]$latch ; CLK          ; EDO.ADD_AB  ; 0.500        ; 3.448      ; 2.696      ;
+; -0.047 ; EDO.DEC_B  ; ALU_Select[2]$latch ; CLK          ; EDO.ADD_AB  ; 0.500        ; 3.469      ; 2.696      ;
+; 0.011  ; EDO.SUB_AB ; ALU_Select[2]$latch ; CLK          ; EDO.ADD_AB  ; 0.500        ; 3.469      ; 2.638      ;
+; 0.032  ; EDO.XOR_AB ; ALU_Select[3]$latch ; CLK          ; EDO.ADD_AB  ; 0.500        ; 3.448      ; 2.585      ;
+; 0.056  ; EDO.DEC_B  ; ALU_Select[0]$latch ; CLK          ; EDO.ADD_AB  ; 0.500        ; 3.446      ; 2.645      ;
+; 0.240  ; EDO.DEC_A  ; ALU_Select[3]$latch ; CLK          ; EDO.ADD_AB  ; 0.500        ; 3.448      ; 2.377      ;
+; 0.339  ; EDO.XOR_AB ; ALU_Select[0]$latch ; CLK          ; EDO.ADD_AB  ; 0.500        ; 3.446      ; 2.362      ;
+; 0.345  ; EDO.AND_AB ; ALU_Select[2]$latch ; CLK          ; EDO.ADD_AB  ; 0.500        ; 3.469      ; 2.304      ;
+; 0.351  ; EDO.INC_A  ; ALU_Select[3]$latch ; CLK          ; EDO.ADD_AB  ; 0.500        ; 3.448      ; 2.266      ;
+; 0.384  ; EDO.NOT_A  ; ALU_Select[2]$latch ; CLK          ; EDO.ADD_AB  ; 0.500        ; 3.469      ; 2.265      ;
+; 0.388  ; EDO.AND_AB ; ALU_Select[0]$latch ; CLK          ; EDO.ADD_AB  ; 0.500        ; 3.446      ; 2.313      ;
+; 0.395  ; EDO.NOT_B  ; ALU_Select[0]$latch ; CLK          ; EDO.ADD_AB  ; 0.500        ; 3.446      ; 2.306      ;
+; 0.412  ; EDO.INC_B  ; ALU_Select[0]$latch ; CLK          ; EDO.ADD_AB  ; 0.500        ; 3.446      ; 2.289      ;
+; 0.526  ; EDO.DEC_B  ; ALU_Select[1]$latch ; CLK          ; EDO.ADD_AB  ; 0.500        ; 3.469      ; 2.215      ;
+; 0.584  ; EDO.SUB_AB ; ALU_Select[1]$latch ; CLK          ; EDO.ADD_AB  ; 0.500        ; 3.469      ; 2.157      ;
+; 0.662  ; EDO.NOT_B  ; ALU_Select[2]$latch ; CLK          ; EDO.ADD_AB  ; 0.500        ; 3.469      ; 1.987      ;
+; 0.685  ; EDO.INC_B  ; ALU_Select[3]$latch ; CLK          ; EDO.ADD_AB  ; 0.500        ; 3.448      ; 1.932      ;
+; 0.907  ; EDO.INC_A  ; ALU_Select[1]$latch ; CLK          ; EDO.ADD_AB  ; 0.500        ; 3.469      ; 1.834      ;
+; 0.957  ; EDO.NOT_A  ; ALU_Select[1]$latch ; CLK          ; EDO.ADD_AB  ; 0.500        ; 3.469      ; 1.784      ;
+; 1.004  ; EDO.XOR_AB ; ALU_Select[1]$latch ; CLK          ; EDO.ADD_AB  ; 0.500        ; 3.469      ; 1.737      ;
+; 1.069  ; EDO.OR_AB  ; ALU_Select[2]$latch ; CLK          ; EDO.ADD_AB  ; 0.500        ; 3.469      ; 1.580      ;
+; 1.787  ; EDO.ADD_AB ; ALU_Select[2]$latch ; EDO.ADD_AB   ; EDO.ADD_AB  ; 0.500        ; 5.562      ; 3.190      ;
+; 2.287  ; EDO.ADD_AB ; ALU_Select[2]$latch ; EDO.ADD_AB   ; EDO.ADD_AB  ; 1.000        ; 5.562      ; 3.190      ;
+; 2.360  ; EDO.ADD_AB ; ALU_Select[1]$latch ; EDO.ADD_AB   ; EDO.ADD_AB  ; 0.500        ; 5.562      ; 2.709      ;
+; 2.543  ; EDO.ADD_AB ; ALU_Select[0]$latch ; EDO.ADD_AB   ; EDO.ADD_AB  ; 0.500        ; 5.539      ; 2.486      ;
+; 2.582  ; EDO.ADD_AB ; ALU_Select[3]$latch ; EDO.ADD_AB   ; EDO.ADD_AB  ; 0.500        ; 5.541      ; 2.363      ;
+; 2.860  ; EDO.ADD_AB ; ALU_Select[1]$latch ; EDO.ADD_AB   ; EDO.ADD_AB  ; 1.000        ; 5.562      ; 2.709      ;
+; 3.043  ; EDO.ADD_AB ; ALU_Select[0]$latch ; EDO.ADD_AB   ; EDO.ADD_AB  ; 1.000        ; 5.539      ; 2.486      ;
+; 3.082  ; EDO.ADD_AB ; ALU_Select[3]$latch ; EDO.ADD_AB   ; EDO.ADD_AB  ; 1.000        ; 5.541      ; 2.363      ;
++--------+------------+---------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Hold: 'EDO.ADD_AB'                                                                                              ;
++--------+------------+---------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node  ; To Node             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------+---------------------+--------------+-------------+--------------+------------+------------+
+; -3.413 ; EDO.ADD_AB ; ALU_Select[3]$latch ; EDO.ADD_AB   ; EDO.ADD_AB  ; 0.000        ; 5.541      ; 2.363      ;
+; -3.288 ; EDO.ADD_AB ; ALU_Select[0]$latch ; EDO.ADD_AB   ; EDO.ADD_AB  ; 0.000        ; 5.539      ; 2.486      ;
+; -3.088 ; EDO.ADD_AB ; ALU_Select[1]$latch ; EDO.ADD_AB   ; EDO.ADD_AB  ; 0.000        ; 5.562      ; 2.709      ;
+; -2.913 ; EDO.ADD_AB ; ALU_Select[3]$latch ; EDO.ADD_AB   ; EDO.ADD_AB  ; -0.500       ; 5.541      ; 2.363      ;
+; -2.788 ; EDO.ADD_AB ; ALU_Select[0]$latch ; EDO.ADD_AB   ; EDO.ADD_AB  ; -0.500       ; 5.539      ; 2.486      ;
+; -2.607 ; EDO.ADD_AB ; ALU_Select[2]$latch ; EDO.ADD_AB   ; EDO.ADD_AB  ; 0.000        ; 5.562      ; 3.190      ;
+; -2.588 ; EDO.ADD_AB ; ALU_Select[1]$latch ; EDO.ADD_AB   ; EDO.ADD_AB  ; -0.500       ; 5.562      ; 2.709      ;
+; -2.107 ; EDO.ADD_AB ; ALU_Select[2]$latch ; EDO.ADD_AB   ; EDO.ADD_AB  ; -0.500       ; 5.562      ; 3.190      ;
+; -1.389 ; EDO.OR_AB  ; ALU_Select[2]$latch ; CLK          ; EDO.ADD_AB  ; -0.500       ; 3.469      ; 1.580      ;
+; -1.232 ; EDO.XOR_AB ; ALU_Select[1]$latch ; CLK          ; EDO.ADD_AB  ; -0.500       ; 3.469      ; 1.737      ;
+; -1.185 ; EDO.NOT_A  ; ALU_Select[1]$latch ; CLK          ; EDO.ADD_AB  ; -0.500       ; 3.469      ; 1.784      ;
+; -1.135 ; EDO.INC_A  ; ALU_Select[1]$latch ; CLK          ; EDO.ADD_AB  ; -0.500       ; 3.469      ; 1.834      ;
+; -1.016 ; EDO.INC_B  ; ALU_Select[3]$latch ; CLK          ; EDO.ADD_AB  ; -0.500       ; 3.448      ; 1.932      ;
+; -0.982 ; EDO.NOT_B  ; ALU_Select[2]$latch ; CLK          ; EDO.ADD_AB  ; -0.500       ; 3.469      ; 1.987      ;
+; -0.812 ; EDO.SUB_AB ; ALU_Select[1]$latch ; CLK          ; EDO.ADD_AB  ; -0.500       ; 3.469      ; 2.157      ;
+; -0.754 ; EDO.DEC_B  ; ALU_Select[1]$latch ; CLK          ; EDO.ADD_AB  ; -0.500       ; 3.469      ; 2.215      ;
+; -0.704 ; EDO.NOT_A  ; ALU_Select[2]$latch ; CLK          ; EDO.ADD_AB  ; -0.500       ; 3.469      ; 2.265      ;
+; -0.682 ; EDO.INC_A  ; ALU_Select[3]$latch ; CLK          ; EDO.ADD_AB  ; -0.500       ; 3.448      ; 2.266      ;
+; -0.665 ; EDO.AND_AB ; ALU_Select[2]$latch ; CLK          ; EDO.ADD_AB  ; -0.500       ; 3.469      ; 2.304      ;
+; -0.657 ; EDO.INC_B  ; ALU_Select[0]$latch ; CLK          ; EDO.ADD_AB  ; -0.500       ; 3.446      ; 2.289      ;
+; -0.640 ; EDO.NOT_B  ; ALU_Select[0]$latch ; CLK          ; EDO.ADD_AB  ; -0.500       ; 3.446      ; 2.306      ;
+; -0.633 ; EDO.AND_AB ; ALU_Select[0]$latch ; CLK          ; EDO.ADD_AB  ; -0.500       ; 3.446      ; 2.313      ;
+; -0.584 ; EDO.XOR_AB ; ALU_Select[0]$latch ; CLK          ; EDO.ADD_AB  ; -0.500       ; 3.446      ; 2.362      ;
+; -0.571 ; EDO.DEC_A  ; ALU_Select[3]$latch ; CLK          ; EDO.ADD_AB  ; -0.500       ; 3.448      ; 2.377      ;
+; -0.363 ; EDO.XOR_AB ; ALU_Select[3]$latch ; CLK          ; EDO.ADD_AB  ; -0.500       ; 3.448      ; 2.585      ;
+; -0.331 ; EDO.SUB_AB ; ALU_Select[2]$latch ; CLK          ; EDO.ADD_AB  ; -0.500       ; 3.469      ; 2.638      ;
+; -0.301 ; EDO.DEC_B  ; ALU_Select[0]$latch ; CLK          ; EDO.ADD_AB  ; -0.500       ; 3.446      ; 2.645      ;
+; -0.273 ; EDO.DEC_B  ; ALU_Select[2]$latch ; CLK          ; EDO.ADD_AB  ; -0.500       ; 3.469      ; 2.696      ;
+; -0.252 ; EDO.AND_AB ; ALU_Select[3]$latch ; CLK          ; EDO.ADD_AB  ; -0.500       ; 3.448      ; 2.696      ;
+; -0.237 ; EDO.OR_AB  ; ALU_Select[3]$latch ; CLK          ; EDO.ADD_AB  ; -0.500       ; 3.448      ; 2.711      ;
+; -0.157 ; EDO.SUB_AB ; ALU_Select[3]$latch ; CLK          ; EDO.ADD_AB  ; -0.500       ; 3.448      ; 2.791      ;
++--------+------------+---------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Hold: 'EDO.Decode'                                                                                                 ;
++--------+-----------------+-------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node       ; To Node           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------+-------------------+--------------+-------------+--------------+------------+------------+
+; -1.150 ; EDO.ADD_AB      ; A_Load$latch      ; EDO.ADD_AB   ; EDO.Decode  ; 0.000        ; 3.595      ; 2.680      ;
+; -0.922 ; EDO.ADD_AB      ; Bus2_Sel[0]$latch ; EDO.ADD_AB   ; EDO.Decode  ; 0.000        ; 3.583      ; 2.896      ;
+; -0.650 ; EDO.ADD_AB      ; A_Load$latch      ; EDO.ADD_AB   ; EDO.Decode  ; -0.500       ; 3.595      ; 2.680      ;
+; -0.618 ; EDO.ADD_AB      ; CCR_Load$latch    ; EDO.ADD_AB   ; EDO.Decode  ; 0.000        ; 3.550      ; 3.167      ;
+; -0.422 ; EDO.ADD_AB      ; Bus2_Sel[0]$latch ; EDO.ADD_AB   ; EDO.Decode  ; -0.500       ; 3.583      ; 2.896      ;
+; -0.282 ; EDO.Load_DIR_A2 ; PC_Inc$latch      ; CLK          ; EDO.Decode  ; 0.000        ; 1.459      ; 1.177      ;
+; -0.281 ; EDO.Load_DIR_A3 ; MAR_Load$latch    ; CLK          ; EDO.Decode  ; 0.000        ; 1.468      ; 1.187      ;
+; -0.118 ; EDO.ADD_AB      ; CCR_Load$latch    ; EDO.ADD_AB   ; EDO.Decode  ; -0.500       ; 3.550      ; 3.167      ;
+; -0.072 ; EDO.JMP3        ; PC_Load$latch     ; CLK          ; EDO.Decode  ; 0.000        ; 1.483      ; 1.411      ;
+; 0.018  ; EDO.Fetch2      ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.495      ; 1.513      ;
+; 0.034  ; EDO.Load_inmA2  ; PC_Inc$latch      ; CLK          ; EDO.Decode  ; 0.000        ; 1.459      ; 1.493      ;
+; 0.203  ; EDO.STOREA4     ; Bus2_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.481      ; 1.684      ;
+; 0.256  ; EDO.JCC3        ; PC_Load$latch     ; CLK          ; EDO.Decode  ; 0.000        ; 1.483      ; 1.739      ;
+; 0.296  ; EDO.Fetch2      ; Bus2_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.481      ; 1.777      ;
+; 0.348  ; EDO.Load_DIR_A4 ; Bus2_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.481      ; 1.829      ;
+; 0.355  ; EDO.Fetch2      ; Bus2_Sel[0]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.490      ; 1.845      ;
+; 0.367  ; EDO.STOREA2     ; PC_Inc$latch      ; CLK          ; EDO.Decode  ; 0.000        ; 1.459      ; 1.826      ;
+; 0.459  ; EDO.STOREB      ; wr$latch          ; CLK          ; EDO.Decode  ; 0.000        ; 1.006      ; 1.465      ;
+; 0.470  ; EDO.JCC4        ; PC_Inc$latch      ; CLK          ; EDO.Decode  ; 0.000        ; 1.459      ; 1.929      ;
+; 0.602  ; EDO.Load_DIR_A4 ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.495      ; 2.097      ;
+; 0.691  ; EDO.Fetch1      ; PC_Inc$latch      ; CLK          ; EDO.Decode  ; 0.000        ; 1.459      ; 2.150      ;
+; 0.795  ; EDO.Load_inmB   ; B_Load$latch      ; CLK          ; EDO.Decode  ; 0.000        ; 1.502      ; 2.297      ;
+; 0.856  ; EDO.Fetch2      ; IR_Load$latch     ; CLK          ; EDO.Decode  ; 0.000        ; 1.111      ; 1.967      ;
+; 0.888  ; EDO.NOT_A       ; A_Load$latch      ; CLK          ; EDO.Decode  ; 0.000        ; 1.502      ; 2.390      ;
+; 0.913  ; EDO.STOREA3     ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.495      ; 2.408      ;
+; 0.996  ; EDO.Load_DIR_B  ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.495      ; 2.491      ;
+; 0.996  ; EDO.STOREA4     ; wr$latch          ; CLK          ; EDO.Decode  ; 0.000        ; 1.006      ; 2.002      ;
+; 1.012  ; EDO.STOREB      ; Bus1_Sel[0]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.471      ; 2.483      ;
+; 1.014  ; EDO.Load_DIR_A2 ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.495      ; 2.509      ;
+; 1.081  ; EDO.INC_A       ; A_Load$latch      ; CLK          ; EDO.Decode  ; 0.000        ; 1.502      ; 2.583      ;
+; 1.093  ; EDO.JMP2        ; Bus2_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.481      ; 2.574      ;
+; 1.104  ; EDO.STOREA3     ; MAR_Load$latch    ; CLK          ; EDO.Decode  ; 0.000        ; 1.468      ; 2.572      ;
+; 1.119  ; EDO.INC_B       ; CCR_Load$latch    ; CLK          ; EDO.Decode  ; 0.000        ; 1.457      ; 2.576      ;
+; 1.120  ; EDO.JCC1_C      ; MAR_Load$latch    ; CLK          ; EDO.Decode  ; 0.000        ; 1.468      ; 2.588      ;
+; 1.121  ; EDO.JCC1_C      ; Bus1_Sel[0]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.471      ; 2.592      ;
+; 1.136  ; EDO.NOT_B       ; CCR_Load$latch    ; CLK          ; EDO.Decode  ; 0.000        ; 1.457      ; 2.593      ;
+; 1.180  ; EDO.JMP3        ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.495      ; 2.675      ;
+; 1.191  ; EDO.STOREA3     ; Bus2_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.481      ; 2.672      ;
+; 1.192  ; EDO.DEC_A       ; A_Load$latch      ; CLK          ; EDO.Decode  ; 0.000        ; 1.502      ; 2.694      ;
+; 1.243  ; EDO.NOT_A       ; CCR_Load$latch    ; CLK          ; EDO.Decode  ; 0.000        ; 1.457      ; 2.700      ;
+; 1.250  ; EDO.STOREA3     ; Bus2_Sel[0]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.490      ; 2.740      ;
+; 1.257  ; EDO.NOT_A       ; Bus2_Sel[0]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.490      ; 2.747      ;
+; 1.274  ; EDO.Load_DIR_B  ; Bus2_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.481      ; 2.755      ;
+; 1.286  ; EDO.Load_DIR_B  ; B_Load$latch      ; CLK          ; EDO.Decode  ; 0.000        ; 1.502      ; 2.788      ;
+; 1.309  ; EDO.INC_A       ; Bus2_Sel[0]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.490      ; 2.799      ;
+; 1.322  ; EDO.INC_B       ; B_Load$latch      ; CLK          ; EDO.Decode  ; 0.000        ; 1.502      ; 2.824      ;
+; 1.330  ; EDO.Load_inmA2  ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.495      ; 2.825      ;
+; 1.333  ; EDO.Load_DIR_B  ; Bus2_Sel[0]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.490      ; 2.823      ;
+; 1.339  ; EDO.NOT_B       ; B_Load$latch      ; CLK          ; EDO.Decode  ; 0.000        ; 1.502      ; 2.841      ;
+; 1.347  ; EDO.JMP2        ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.495      ; 2.842      ;
+; 1.370  ; EDO.Load_inmB   ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.495      ; 2.865      ;
+; 1.381  ; EDO.JMP1        ; MAR_Load$latch    ; CLK          ; EDO.Decode  ; 0.000        ; 1.468      ; 2.849      ;
+; 1.382  ; EDO.JMP1        ; Bus1_Sel[0]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.471      ; 2.853      ;
+; 1.396  ; EDO.JCC2        ; Bus2_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.481      ; 2.877      ;
+; 1.400  ; EDO.XOR_AB      ; A_Load$latch      ; CLK          ; EDO.Decode  ; 0.000        ; 1.502      ; 2.902      ;
+; 1.420  ; EDO.DEC_A       ; Bus2_Sel[0]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.490      ; 2.910      ;
+; 1.438  ; EDO.Load_DIR_A2 ; Bus2_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.481      ; 2.919      ;
+; 1.457  ; EDO.Load_DIR_A5 ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.495      ; 2.952      ;
+; 1.458  ; EDO.JMP3        ; Bus2_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.481      ; 2.939      ;
+; 1.467  ; EDO.Load_inmA3  ; A_Load$latch      ; CLK          ; EDO.Decode  ; 0.000        ; 1.502      ; 2.969      ;
+; 1.475  ; EDO.DEC_B       ; CCR_Load$latch    ; CLK          ; EDO.Decode  ; 0.000        ; 1.457      ; 2.932      ;
+; 1.497  ; EDO.Load_inmA1  ; MAR_Load$latch    ; CLK          ; EDO.Decode  ; 0.000        ; 1.468      ; 2.965      ;
+; 1.498  ; EDO.Load_inmA1  ; Bus1_Sel[0]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.471      ; 2.969      ;
+; 1.508  ; EDO.JCC3        ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.495      ; 3.003      ;
+; 1.509  ; EDO.Load_DIR_A3 ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.495      ; 3.004      ;
+; 1.510  ; EDO.INC_B       ; Bus2_Sel[0]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.490      ; 3.000      ;
+; 1.511  ; EDO.AND_AB      ; A_Load$latch      ; CLK          ; EDO.Decode  ; 0.000        ; 1.502      ; 3.013      ;
+; 1.517  ; EDO.JMP3        ; Bus2_Sel[0]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.490      ; 3.007      ;
+; 1.526  ; EDO.OR_AB       ; A_Load$latch      ; CLK          ; EDO.Decode  ; 0.000        ; 1.502      ; 3.028      ;
+; 1.526  ; EDO.JCC1_NV     ; MAR_Load$latch    ; CLK          ; EDO.Decode  ; 0.000        ; 1.468      ; 2.994      ;
+; 1.527  ; EDO.JCC1_NV     ; Bus1_Sel[0]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.471      ; 2.998      ;
+; 1.527  ; EDO.NOT_B       ; Bus2_Sel[0]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.490      ; 3.017      ;
+; 1.605  ; EDO.Load_DIR_A  ; MAR_Load$latch    ; CLK          ; EDO.Decode  ; 0.000        ; 1.468      ; 3.073      ;
+; 1.606  ; EDO.SUB_AB      ; A_Load$latch      ; CLK          ; EDO.Decode  ; 0.000        ; 1.502      ; 3.108      ;
+; 1.606  ; EDO.Load_DIR_A  ; Bus1_Sel[0]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.471      ; 3.077      ;
+; 1.613  ; EDO.INC_A       ; CCR_Load$latch    ; CLK          ; EDO.Decode  ; 0.000        ; 1.457      ; 3.070      ;
+; 1.616  ; EDO.STOREB      ; Bus2_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.481      ; 3.097      ;
+; 1.628  ; EDO.XOR_AB      ; Bus2_Sel[0]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.490      ; 3.118      ;
+; 1.632  ; EDO.JCC1_NZ     ; MAR_Load$latch    ; CLK          ; EDO.Decode  ; 0.000        ; 1.468      ; 3.100      ;
+; 1.633  ; EDO.JCC1_NZ     ; Bus1_Sel[0]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.471      ; 3.104      ;
+; 1.648  ; EDO.Load_inmB   ; Bus2_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.481      ; 3.129      ;
+; 1.650  ; EDO.JCC2        ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.495      ; 3.145      ;
+; 1.663  ; EDO.STOREA2     ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.495      ; 3.158      ;
+; 1.676  ; EDO.Load_inmA3  ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.495      ; 3.171      ;
+; 1.678  ; EDO.DEC_B       ; B_Load$latch      ; CLK          ; EDO.Decode  ; 0.000        ; 1.502      ; 3.180      ;
+; 1.707  ; EDO.INC_B       ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.495      ; 3.202      ;
+; 1.707  ; EDO.Load_inmB   ; Bus2_Sel[0]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.490      ; 3.197      ;
+; 1.724  ; EDO.DEC_A       ; CCR_Load$latch    ; CLK          ; EDO.Decode  ; 0.000        ; 1.457      ; 3.181      ;
+; 1.724  ; EDO.NOT_B       ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.495      ; 3.219      ;
+; 1.735  ; EDO.Load_DIR_A5 ; Bus2_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.481      ; 3.216      ;
+; 1.736  ; EDO.JCC1_NC     ; MAR_Load$latch    ; CLK          ; EDO.Decode  ; 0.000        ; 1.468      ; 3.204      ;
+; 1.737  ; EDO.JCC1_NC     ; Bus1_Sel[0]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.471      ; 3.208      ;
+; 1.739  ; EDO.AND_AB      ; Bus2_Sel[0]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.490      ; 3.229      ;
+; 1.747  ; EDO.JCC1_NN     ; MAR_Load$latch    ; CLK          ; EDO.Decode  ; 0.000        ; 1.468      ; 3.215      ;
+; 1.748  ; EDO.JCC1_NN     ; Bus1_Sel[0]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.471      ; 3.219      ;
+; 1.754  ; EDO.OR_AB       ; Bus2_Sel[0]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.490      ; 3.244      ;
+; 1.754  ; EDO.Load_inmA2  ; Bus2_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.481      ; 3.235      ;
+; 1.766  ; EDO.JCC4        ; Bus1_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.495      ; 3.261      ;
+; 1.786  ; EDO.JCC3        ; Bus2_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.481      ; 3.267      ;
+; 1.787  ; EDO.Load_DIR_A3 ; Bus2_Sel[1]$latch ; CLK          ; EDO.Decode  ; 0.000        ; 1.481      ; 3.268      ;
++--------+-----------------+-------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Hold: 'CLK'                                                                                                      ;
++--------+-----------------+-----------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node       ; To Node         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------+-----------------+--------------+-------------+--------------+------------+------------+
+; -0.755 ; EDO.Decode      ; EDO.AND_AB      ; EDO.Decode   ; CLK         ; 0.000        ; 2.093      ; 1.711      ;
+; -0.754 ; EDO.Decode      ; EDO.XOR_AB      ; EDO.Decode   ; CLK         ; 0.000        ; 2.093      ; 1.712      ;
+; -0.752 ; EDO.Decode      ; EDO.INC_A       ; EDO.Decode   ; CLK         ; 0.000        ; 2.093      ; 1.714      ;
+; -0.749 ; EDO.Decode      ; EDO.DEC_A       ; EDO.Decode   ; CLK         ; 0.000        ; 2.093      ; 1.717      ;
+; -0.748 ; EDO.Decode      ; EDO.ADD_AB      ; EDO.Decode   ; CLK         ; 0.000        ; 2.093      ; 1.718      ;
+; -0.747 ; EDO.Decode      ; EDO.SUB_AB      ; EDO.Decode   ; CLK         ; 0.000        ; 2.093      ; 1.719      ;
+; -0.469 ; EDO.Decode      ; EDO.STOREA      ; EDO.Decode   ; CLK         ; 0.000        ; 2.093      ; 1.997      ;
+; -0.416 ; EDO.Decode      ; EDO.JMP1        ; EDO.Decode   ; CLK         ; 0.000        ; 2.093      ; 2.050      ;
+; -0.279 ; EDO.Decode      ; EDO.Load_inmA1  ; EDO.Decode   ; CLK         ; 0.000        ; 2.093      ; 2.187      ;
+; -0.278 ; EDO.Decode      ; EDO.Load_DIR_A  ; EDO.Decode   ; CLK         ; 0.000        ; 2.093      ; 2.188      ;
+; -0.255 ; EDO.Decode      ; EDO.AND_AB      ; EDO.Decode   ; CLK         ; -0.500       ; 2.093      ; 1.711      ;
+; -0.254 ; EDO.Decode      ; EDO.XOR_AB      ; EDO.Decode   ; CLK         ; -0.500       ; 2.093      ; 1.712      ;
+; -0.252 ; EDO.Decode      ; EDO.INC_A       ; EDO.Decode   ; CLK         ; -0.500       ; 2.093      ; 1.714      ;
+; -0.249 ; EDO.Decode      ; EDO.DEC_A       ; EDO.Decode   ; CLK         ; -0.500       ; 2.093      ; 1.717      ;
+; -0.248 ; EDO.Decode      ; EDO.NOT_B       ; EDO.Decode   ; CLK         ; 0.000        ; 2.093      ; 2.218      ;
+; -0.248 ; EDO.Decode      ; EDO.ADD_AB      ; EDO.Decode   ; CLK         ; -0.500       ; 2.093      ; 1.718      ;
+; -0.247 ; EDO.Decode      ; EDO.SUB_AB      ; EDO.Decode   ; CLK         ; -0.500       ; 2.093      ; 1.719      ;
+; -0.245 ; EDO.Decode      ; EDO.NOT_A       ; EDO.Decode   ; CLK         ; 0.000        ; 2.093      ; 2.221      ;
+; -0.232 ; EDO.Decode      ; EDO.DEC_B       ; EDO.Decode   ; CLK         ; 0.000        ; 2.093      ; 2.234      ;
+; -0.103 ; EDO.Decode      ; EDO.JCC1_NZ     ; EDO.Decode   ; CLK         ; 0.000        ; 2.093      ; 2.363      ;
+; -0.096 ; EDO.Decode      ; EDO.OR_AB       ; EDO.Decode   ; CLK         ; 0.000        ; 2.093      ; 2.370      ;
+; -0.080 ; EDO.Decode      ; EDO.Decode      ; EDO.Decode   ; CLK         ; 0.000        ; 2.093      ; 2.386      ;
+; -0.007 ; EDO.Decode      ; EDO.JCC1_C      ; EDO.Decode   ; CLK         ; 0.000        ; 2.093      ; 2.459      ;
+; 0.031  ; EDO.Decode      ; EDO.STOREA      ; EDO.Decode   ; CLK         ; -0.500       ; 2.093      ; 1.997      ;
+; 0.084  ; EDO.Decode      ; EDO.JMP1        ; EDO.Decode   ; CLK         ; -0.500       ; 2.093      ; 2.050      ;
+; 0.205  ; EDO.Decode      ; EDO.INC_B       ; EDO.Decode   ; CLK         ; 0.000        ; 2.093      ; 2.671      ;
+; 0.221  ; EDO.Decode      ; EDO.Load_inmA1  ; EDO.Decode   ; CLK         ; -0.500       ; 2.093      ; 2.187      ;
+; 0.222  ; EDO.Decode      ; EDO.Load_DIR_A  ; EDO.Decode   ; CLK         ; -0.500       ; 2.093      ; 2.188      ;
+; 0.252  ; EDO.Decode      ; EDO.NOT_B       ; EDO.Decode   ; CLK         ; -0.500       ; 2.093      ; 2.218      ;
+; 0.255  ; EDO.Decode      ; EDO.NOT_A       ; EDO.Decode   ; CLK         ; -0.500       ; 2.093      ; 2.221      ;
+; 0.268  ; EDO.Decode      ; EDO.DEC_B       ; EDO.Decode   ; CLK         ; -0.500       ; 2.093      ; 2.234      ;
+; 0.270  ; EDO.Decode      ; EDO.JCC4        ; EDO.Decode   ; CLK         ; 0.000        ; 2.093      ; 2.736      ;
+; 0.371  ; EDO.Decode      ; EDO.JCC1_NC     ; EDO.Decode   ; CLK         ; 0.000        ; 2.093      ; 2.837      ;
+; 0.372  ; EDO.Decode      ; EDO.JCC1_V      ; EDO.Decode   ; CLK         ; 0.000        ; 2.093      ; 2.838      ;
+; 0.373  ; EDO.Decode      ; EDO.JCC1_NN     ; EDO.Decode   ; CLK         ; 0.000        ; 2.093      ; 2.839      ;
+; 0.373  ; EDO.Decode      ; EDO.JCC1_Z      ; EDO.Decode   ; CLK         ; 0.000        ; 2.093      ; 2.839      ;
+; 0.377  ; EDO.Decode      ; EDO.JCC1_NV     ; EDO.Decode   ; CLK         ; 0.000        ; 2.093      ; 2.843      ;
+; 0.378  ; EDO.Decode      ; EDO.JCC1_N      ; EDO.Decode   ; CLK         ; 0.000        ; 2.093      ; 2.844      ;
+; 0.397  ; EDO.Decode      ; EDO.JCC1_NZ     ; EDO.Decode   ; CLK         ; -0.500       ; 2.093      ; 2.363      ;
+; 0.404  ; EDO.Decode      ; EDO.OR_AB       ; EDO.Decode   ; CLK         ; -0.500       ; 2.093      ; 2.370      ;
+; 0.420  ; EDO.Decode      ; EDO.Decode      ; EDO.Decode   ; CLK         ; -0.500       ; 2.093      ; 2.386      ;
+; 0.493  ; EDO.Decode      ; EDO.JCC1_C      ; EDO.Decode   ; CLK         ; -0.500       ; 2.093      ; 2.459      ;
+; 0.705  ; EDO.Decode      ; EDO.INC_B       ; EDO.Decode   ; CLK         ; -0.500       ; 2.093      ; 2.671      ;
+; 0.770  ; EDO.Decode      ; EDO.JCC4        ; EDO.Decode   ; CLK         ; -0.500       ; 2.093      ; 2.736      ;
+; 0.871  ; EDO.Decode      ; EDO.JCC1_NC     ; EDO.Decode   ; CLK         ; -0.500       ; 2.093      ; 2.837      ;
+; 0.872  ; EDO.Decode      ; EDO.JCC1_V      ; EDO.Decode   ; CLK         ; -0.500       ; 2.093      ; 2.838      ;
+; 0.873  ; EDO.Decode      ; EDO.JCC1_NN     ; EDO.Decode   ; CLK         ; -0.500       ; 2.093      ; 2.839      ;
+; 0.873  ; EDO.Decode      ; EDO.JCC1_Z      ; EDO.Decode   ; CLK         ; -0.500       ; 2.093      ; 2.839      ;
+; 0.877  ; EDO.Decode      ; EDO.JCC1_NV     ; EDO.Decode   ; CLK         ; -0.500       ; 2.093      ; 2.843      ;
+; 0.878  ; EDO.Decode      ; EDO.JCC1_N      ; EDO.Decode   ; CLK         ; -0.500       ; 2.093      ; 2.844      ;
+; 0.944  ; EDO.ADD_AB      ; EDO.IDLE        ; EDO.ADD_AB   ; CLK         ; 0.000        ; 2.093      ; 3.410      ;
+; 1.041  ; EDO.STOREA3     ; EDO.STOREA4     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.179      ;
+; 1.119  ; EDO.Load_DIR_A  ; EDO.Load_DIR_A2 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.257      ;
+; 1.121  ; EDO.Load_DIR_A2 ; EDO.Load_DIR_A3 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.259      ;
+; 1.444  ; EDO.ADD_AB      ; EDO.IDLE        ; EDO.ADD_AB   ; CLK         ; -0.500       ; 2.093      ; 3.410      ;
+; 1.544  ; EDO.JMP2        ; EDO.JMP3        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.682      ;
+; 1.548  ; EDO.Load_inmA1  ; EDO.Load_inmA2  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.686      ;
+; 1.582  ; EDO.Load_DIR_A3 ; EDO.Load_DIR_A4 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.720      ;
+; 1.643  ; EDO.Fetch1      ; EDO.Fetch2      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.781      ;
+; 1.768  ; EDO.JCC2        ; EDO.JCC3        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.906      ;
+; 1.775  ; EDO.IDLE        ; EDO.Fetch1      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.913      ;
+; 1.782  ; EDO.JMP1        ; EDO.JMP2        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.920      ;
+; 1.865  ; EDO.STOREA      ; EDO.STOREA2     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.003      ;
+; 1.879  ; EDO.STOREA3     ; EDO.STOREB      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.017      ;
+; 1.945  ; EDO.Load_inmA2  ; EDO.Load_inmA3  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.083      ;
+; 1.977  ; EDO.Load_DIR_A4 ; EDO.Load_DIR_A5 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.115      ;
+; 1.978  ; EDO.Load_DIR_A4 ; EDO.Load_DIR_B  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.116      ;
+; 2.136  ; EDO.STOREA2     ; EDO.STOREA3     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.274      ;
+; 2.184  ; EDO.Load_inmA2  ; EDO.Load_inmB   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.322      ;
+; 2.255  ; EDO.IDLE        ; EDO.IDLE        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.393      ;
+; 2.327  ; EDO.JCC1_C      ; EDO.JCC2        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.465      ;
+; 2.571  ; EDO.Fetch2      ; EDO.Decode      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.709      ;
+; 2.582  ; EDO.STOREB      ; EDO.IDLE        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.720      ;
+; 2.681  ; EDO.INC_B       ; EDO.IDLE        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.819      ;
+; 2.682  ; EDO.STOREA4     ; EDO.IDLE        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.820      ;
+; 2.698  ; EDO.NOT_B       ; EDO.IDLE        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.836      ;
+; 2.733  ; EDO.JCC1_NV     ; EDO.JCC2        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.871      ;
+; 2.805  ; EDO.NOT_A       ; EDO.IDLE        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.943      ;
+; 2.829  ; EDO.Load_DIR_B  ; EDO.IDLE        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.967      ;
+; 2.839  ; EDO.JCC1_NZ     ; EDO.JCC2        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.977      ;
+; 2.943  ; EDO.JCC1_NC     ; EDO.JCC2        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.081      ;
+; 2.954  ; EDO.JCC1_NN     ; EDO.JCC2        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.092      ;
+; 3.013  ; EDO.JMP3        ; EDO.IDLE        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.151      ;
+; 3.037  ; EDO.DEC_B       ; EDO.IDLE        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.175      ;
+; 3.061  ; EDO.JCC1_N      ; EDO.JCC2        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.199      ;
+; 3.138  ; EDO.JCC4        ; EDO.IDLE        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.276      ;
+; 3.161  ; EDO.JCC1_V      ; EDO.JCC2        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.299      ;
+; 3.164  ; EDO.JCC1_Z      ; EDO.JCC2        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.302      ;
+; 3.175  ; EDO.INC_A       ; EDO.IDLE        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.313      ;
+; 3.203  ; EDO.Load_inmB   ; EDO.IDLE        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.341      ;
+; 3.286  ; EDO.DEC_A       ; EDO.IDLE        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.424      ;
+; 3.290  ; EDO.Load_DIR_A5 ; EDO.IDLE        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.428      ;
+; 3.341  ; EDO.JCC3        ; EDO.IDLE        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.479      ;
+; 3.494  ; EDO.XOR_AB      ; EDO.IDLE        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.632      ;
+; 3.509  ; EDO.Load_inmA3  ; EDO.IDLE        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.647      ;
+; 3.605  ; EDO.AND_AB      ; EDO.IDLE        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.743      ;
+; 3.620  ; EDO.OR_AB       ; EDO.IDLE        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.758      ;
+; 3.700  ; EDO.SUB_AB      ; EDO.IDLE        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.838      ;
++--------+-----------------+-----------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------+
+; Setup Transfers                                                     ;
++------------+------------+----------+----------+----------+----------+
+; From Clock ; To Clock   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+------------+----------+----------+----------+----------+
+; CLK        ; CLK        ; 46       ; 0        ; 0        ; 0        ;
+; EDO.ADD_AB ; CLK        ; 1        ; 1        ; 0        ; 0        ;
+; EDO.Decode ; CLK        ; 25       ; 25       ; 0        ; 0        ;
+; CLK        ; EDO.ADD_AB ; 0        ; 0        ; 23       ; 0        ;
+; EDO.ADD_AB ; EDO.ADD_AB ; 0        ; 0        ; 4        ; 4        ;
+; CLK        ; EDO.Decode ; 125      ; 0        ; 0        ; 0        ;
+; EDO.ADD_AB ; EDO.Decode ; 3        ; 3        ; 0        ; 0        ;
++------------+------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------+
+; Hold Transfers                                                      ;
++------------+------------+----------+----------+----------+----------+
+; From Clock ; To Clock   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+------------+----------+----------+----------+----------+
+; CLK        ; CLK        ; 46       ; 0        ; 0        ; 0        ;
+; EDO.ADD_AB ; CLK        ; 1        ; 1        ; 0        ; 0        ;
+; EDO.Decode ; CLK        ; 25       ; 25       ; 0        ; 0        ;
+; CLK        ; EDO.ADD_AB ; 0        ; 0        ; 23       ; 0        ;
+; EDO.ADD_AB ; EDO.ADD_AB ; 0        ; 0        ; 4        ; 4        ;
+; CLK        ; EDO.Decode ; 125      ; 0        ; 0        ; 0        ;
+; EDO.ADD_AB ; EDO.Decode ; 3        ; 3        ; 0        ; 0        ;
++------------+------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 14    ; 14   ;
+; Unconstrained Input Port Paths  ; 303   ; 303  ;
+; Unconstrained Output Ports      ; 16    ; 16   ;
+; Unconstrained Output Port Paths ; 16    ; 16   ;
++---------------------------------+-------+------+
+
+
++----------------------------------------------+
+; Clock Status Summary                         ;
++------------+------------+------+-------------+
+; Target     ; Clock      ; Type ; Status      ;
++------------+------------+------+-------------+
+; CLK        ; CLK        ; Base ; Constrained ;
+; EDO.ADD_AB ; EDO.ADD_AB ; Base ; Constrained ;
+; EDO.Decode ; EDO.Decode ; Base ; Constrained ;
++------------+------------+------+-------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                            ;
++---------------+--------------------------------------------------------------------------------------+
+; Input Port    ; Comment                                                                              ;
++---------------+--------------------------------------------------------------------------------------+
+; CCR_Result[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; CCR_Result[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; CCR_Result[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; CCR_Result[3] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; IR[0]         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; IR[1]         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; IR[2]         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; IR[3]         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; IR[4]         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; IR[5]         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; IR[6]         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; IR[7]         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RST           ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Start         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------+--------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                            ;
++---------------+---------------------------------------------------------------------------------------+
+; Output Port   ; Comment                                                                               ;
++---------------+---------------------------------------------------------------------------------------+
+; ALU_Select[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ALU_Select[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ALU_Select[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ALU_Select[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; A_Load        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; B_Load        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Bus1_Sel[0]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Bus1_Sel[1]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Bus2_Sel[0]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Bus2_Sel[1]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; CCR_Load      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; IR_Load       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; MAR_Load      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; PC_Inc        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; PC_Load       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; wr            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------+---------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                            ;
++---------------+--------------------------------------------------------------------------------------+
+; Input Port    ; Comment                                                                              ;
++---------------+--------------------------------------------------------------------------------------+
+; CCR_Result[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; CCR_Result[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; CCR_Result[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; CCR_Result[3] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; IR[0]         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; IR[1]         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; IR[2]         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; IR[3]         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; IR[4]         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; IR[5]         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; IR[6]         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; IR[7]         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RST           ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Start         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------+--------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                            ;
++---------------+---------------------------------------------------------------------------------------+
+; Output Port   ; Comment                                                                               ;
++---------------+---------------------------------------------------------------------------------------+
+; ALU_Select[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ALU_Select[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ALU_Select[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ALU_Select[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; A_Load        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; B_Load        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Bus1_Sel[0]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Bus1_Sel[1]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Bus2_Sel[0]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Bus2_Sel[1]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; CCR_Load      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; IR_Load       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; MAR_Load      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; PC_Inc        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; PC_Load       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; wr            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Wed May 15 00:04:23 2024
+Info: Command: quartus_sta mestados_p -c mestados_p
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Warning (335093): The Timing Analyzer is analyzing 16 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'mestados_p.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name EDO.Decode EDO.Decode
+    Info (332105): create_clock -period 1.000 -name EDO.ADD_AB EDO.ADD_AB
+    Info (332105): create_clock -period 1.000 -name CLK CLK
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -3.046
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.046             -26.729 CLK 
+    Info (332119):    -2.676             -22.626 EDO.Decode 
+    Info (332119):    -0.174              -0.221 EDO.ADD_AB 
+Info (332146): Worst-case hold slack is -3.413
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.413             -12.396 EDO.ADD_AB 
+    Info (332119):    -1.150              -3.325 EDO.Decode 
+    Info (332119):    -0.755              -6.958 CLK 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 CLK 
+    Info (332119):     0.500               0.000 EDO.ADD_AB 
+    Info (332119):     0.500               0.000 EDO.Decode 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4669 megabytes
+    Info: Processing ended: Wed May 15 00:04:24 2024
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

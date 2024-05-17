@@ -1,0 +1,66 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+ENTITY mem_datos IS
+	 PORT(CLK, WR: IN STD_LOGIC;
+			ADDREES: IN STD_LOGIC_VECTOR(6 DOWNTO 0);
+			DATA_IN: IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+			DATA_OUT: OUT STD_LOGIC_VECTOR(7 DOWNTO 0));
+			
+	END mem_datos;
+	
+	
+	
+
+ARCHITECTURE RTL OF mem_datos IS
+	TYPE MEM_DATO IS ARRAY (0 TO 95) OF STD_LOGIC_VECTOR(7 DOWNTO 0);
+	SIGNAL RAM: MEM_DATO :=(
+	X"44", X"22", X"11", X"00",
+	X"00", X"00", X"00", X"00",
+	X"00", X"00", X"00", X"00",
+	X"00", X"00", X"00", X"00",
+	X"00", X"00", X"00", X"00",
+	X"00", X"00", X"00", X"00",
+	X"00", X"00", X"00", X"00",
+	X"00", X"00", X"00", X"00",
+	X"00", X"00", X"00", X"00",
+	X"00", X"00", X"00", X"00",
+	X"00", X"00", X"00", X"00",
+	X"00", X"00", X"00", X"00",
+	X"00", X"00", X"00", X"00",
+	X"00", X"00", X"00", X"00",
+	X"00", X"00", X"00", X"00",
+	X"00", X"00", X"00", X"00",
+	X"78", X"4E", X"B7", X"55",
+	X"23", X"45", X"88", X"77",
+	X"FF", X"AA", X"CC", X"EE",
+	X"00", X"00", X"00", X"00",
+	X"00", X"00", X"00", X"00",
+	X"00", X"00", X"00", X"00",
+	X"00", X"00", X"00", X"00",
+	X"00", X"00", X"00", X"00"
+	);
+	
+	BEGIN 
+		PROCESS(CLK)
+			BEGIN
+				IF(CLK'EVENT AND CLK = '1') THEN
+					IF(WR = '1') THEN
+						RAM(CONV_INTEGER(UNSIGNED(ADDREES))) <= DATA_IN;
+					ELSE
+						DATA_OUT <= RAM(CONV_INTEGER(UNSIGNED(ADDREES)));
+					END IF;
+				END IF;
+			END PROCESS;
+			
+	END ARCHITECTURE;
+			
+			
+			
+			
+			
+			
+	
+	

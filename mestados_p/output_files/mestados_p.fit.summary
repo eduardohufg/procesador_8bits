@@ -1,0 +1,11 @@
+Fitter Status : Successful - Wed May 15 00:04:20 2024
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : mestados_p
+Top-level Entity Name : mestados_p
+Family : MAX II
+Device : EPM240T100C3
+Timing Models : Final
+Total logic elements : 119 / 240 ( 50 % )
+Total pins : 31 / 80 ( 39 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

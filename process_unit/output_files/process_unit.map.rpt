@@ -1,0 +1,447 @@
+Analysis & Synthesis report for process_unit
+Wed May 15 00:06:13 2024
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |process_unit|mestados_p:C1|EDO
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Port Connectivity Checks: "data_path:C2"
+ 14. Port Connectivity Checks: "mestados_p:C1"
+ 15. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Wed May 15 00:06:13 2024       ;
+; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name               ; process_unit                                ;
+; Top-level Entity Name       ; process_unit                                ;
+; Family                      ; MAX II                                      ;
+; Total logic elements        ; 271                                         ;
+; Total pins                  ; 27                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                            ; process_unit       ; process_unit       ;
+; Family name                                                      ; MAX II             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                 ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                          ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------+---------+
+; ../data_path/data_path.vhd       ; yes             ; User VHDL File  ; C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/data_path/data_path.vhd       ;         ;
+; ../regs/regs.vhd                 ; yes             ; User VHDL File  ; C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/regs/regs.vhd                 ;         ;
+; ../pc/pc.vhd                     ; yes             ; User VHDL File  ; C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/pc/pc.vhd                     ;         ;
+; ../mestados_p/mestados_p.vhd     ; yes             ; User VHDL File  ; C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd     ;         ;
+; ../ALU/ALU.vhd                   ; yes             ; User VHDL File  ; C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/ALU/ALU.vhd                   ;         ;
+; process_unit.vhd                 ; yes             ; User VHDL File  ; C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/process_unit/process_unit.vhd ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 271   ;
+;     -- Combinational with no register       ; 185   ;
+;     -- Register only                        ; 42    ;
+;     -- Combinational with a register        ; 44    ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 105   ;
+;     -- 3 input functions                    ; 92    ;
+;     -- 2 input functions                    ; 28    ;
+;     -- 1 input functions                    ; 3     ;
+;     -- 0 input functions                    ; 1     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 255   ;
+;     -- arithmetic mode                      ; 16    ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 8     ;
+;     -- asynchronous clear/load mode         ; 86    ;
+;                                             ;       ;
+; Total registers                             ; 86    ;
+; Total logic cells in carry chains           ; 18    ;
+; I/O pins                                    ; 27    ;
+; Maximum fan-out node                        ; CLK   ;
+; Maximum fan-out                             ; 86    ;
+; Total fan-out                               ; 1045  ;
+; Average fan-out                             ; 3.51  ;
++---------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------+--------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                ; Entity Name  ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------+--------------+--------------+
+; |process_unit              ; 271 (0)     ; 86           ; 0          ; 27   ; 0            ; 185 (0)      ; 42 (0)            ; 44 (0)           ; 18 (0)          ; 0 (0)      ; |process_unit                      ; process_unit ; work         ;
+;    |data_path:C2|          ; 148 (61)    ; 43           ; 0          ; 0    ; 0            ; 105 (61)     ; 32 (0)            ; 11 (0)           ; 18 (0)          ; 0 (0)      ; |process_unit|data_path:C2         ; data_path    ; work         ;
+;       |ALU:C2|             ; 43 (43)     ; 0            ; 0          ; 0    ; 0            ; 43 (43)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |process_unit|data_path:C2|ALU:C2  ; ALU          ; work         ;
+;       |PC:C1|              ; 9 (9)       ; 8            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 8 (8)            ; 8 (8)           ; 0 (0)      ; |process_unit|data_path:C2|PC:C1   ; PC           ; work         ;
+;       |regs:CR|            ; 35 (35)     ; 35           ; 0          ; 0    ; 0            ; 0 (0)        ; 32 (32)           ; 3 (3)            ; 0 (0)           ; 0 (0)      ; |process_unit|data_path:C2|regs:CR ; regs         ; work         ;
+;    |mestados_p:C1|         ; 123 (123)   ; 43           ; 0          ; 0    ; 0            ; 80 (80)      ; 10 (10)           ; 33 (33)          ; 0 (0)           ; 0 (0)      ; |process_unit|mestados_p:C1        ; mestados_p   ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------+--------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |process_unit|mestados_p:C1|EDO                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ;
++-----------------+-----------+-----------+-----------+-----------+-----------+-----------+------------+-----------+------------+------------+------------+-------------+------------+-------------+------------+------------+-------------+-------------+----------+----------+----------+------------+----------+----------+----------+------------+-------------+-------------+-------------+------------+----------------+-----------------+-----------------+-----------------+-----------------+----------------+---------------+----------------+----------------+----------------+------------+------------+------------+----------+
+; Name            ; EDO.NOT_B ; EDO.NOT_A ; EDO.DEC_B ; EDO.DEC_A ; EDO.INC_B ; EDO.INC_A ; EDO.XOR_AB ; EDO.OR_AB ; EDO.AND_AB ; EDO.SUB_AB ; EDO.ADD_AB ; EDO.JCC1_NZ ; EDO.JCC1_C ; EDO.JCC1_NC ; EDO.JCC1_V ; EDO.JCC1_Z ; EDO.JCC1_NN ; EDO.JCC1_NV ; EDO.JCC4 ; EDO.JCC3 ; EDO.JCC2 ; EDO.JCC1_N ; EDO.JMP3 ; EDO.JMP2 ; EDO.JMP1 ; EDO.STOREB ; EDO.STOREA4 ; EDO.STOREA3 ; EDO.STOREA2 ; EDO.STOREA ; EDO.Load_DIR_B ; EDO.Load_DIR_A5 ; EDO.Load_DIR_A4 ; EDO.Load_DIR_A3 ; EDO.Load_DIR_A2 ; EDO.Load_DIR_A ; EDO.Load_inmB ; EDO.Load_inmA3 ; EDO.Load_inmA2 ; EDO.Load_inmA1 ; EDO.Decode ; EDO.Fetch2 ; EDO.Fetch1 ; EDO.IDLE ;
++-----------------+-----------+-----------+-----------+-----------+-----------+-----------+------------+-----------+------------+------------+------------+-------------+------------+-------------+------------+------------+-------------+-------------+----------+----------+----------+------------+----------+----------+----------+------------+-------------+-------------+-------------+------------+----------------+-----------------+-----------------+-----------------+-----------------+----------------+---------------+----------------+----------------+----------------+------------+------------+------------+----------+
+; EDO.IDLE        ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 0        ;
+; EDO.Fetch1      ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 1          ; 1        ;
+; EDO.Fetch2      ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 1          ; 0          ; 1        ;
+; EDO.Decode      ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 1          ; 0          ; 0          ; 1        ;
+; EDO.Load_inmA1  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 1              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.Load_inmA2  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 1              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.Load_inmA3  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 1              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.Load_inmB   ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 1             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.Load_DIR_A  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 1              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.Load_DIR_A2 ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 1               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.Load_DIR_A3 ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 1               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.Load_DIR_A4 ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 1               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.Load_DIR_A5 ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 1               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.Load_DIR_B  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 1              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.STOREA      ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 1          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.STOREA2     ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 1           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.STOREA3     ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 1           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.STOREA4     ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 1           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.STOREB      ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 1          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.JMP1        ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 1        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.JMP2        ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 1        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.JMP3        ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 1        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.JCC1_N      ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 1          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.JCC2        ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 1        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.JCC3        ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 1        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.JCC4        ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 1        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.JCC1_NV     ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 1           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.JCC1_NN     ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 1           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.JCC1_Z      ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 1          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.JCC1_V      ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 1          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.JCC1_NC     ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 1           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.JCC1_C      ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 1          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.JCC1_NZ     ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 1           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.ADD_AB      ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 1          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.SUB_AB      ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 1          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.AND_AB      ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 1          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.OR_AB       ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 1         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.XOR_AB      ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.INC_A       ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.INC_B       ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.DEC_A       ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.DEC_B       ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.NOT_A       ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
+; EDO.NOT_B       ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ; 0         ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0          ; 0           ; 0           ; 0        ; 0        ; 0        ; 0          ; 0        ; 0        ; 0        ; 0          ; 0           ; 0           ; 0           ; 0          ; 0              ; 0               ; 0               ; 0               ; 0               ; 0              ; 0             ; 0              ; 0              ; 0              ; 0          ; 0          ; 0          ; 1        ;
++-----------------+-----------+-----------+-----------+-----------+-----------+-----------+------------+-----------+------------+------------+------------+-------------+------------+-------------+------------+------------+-------------+-------------+----------+----------+----------+------------+----------+----------+----------+------------+-------------+-------------+-------------+------------+----------------+-----------------+-----------------+-----------------+-----------------+----------------+---------------+----------------+----------------+----------------+------------+------------+------------+----------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                     ;
++-----------------------------------------------------+--------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal      ; Free of Timing Hazards ;
++-----------------------------------------------------+--------------------------+------------------------+
+; mestados_p:C1|wr                                    ; mestados_p:C1|wr         ; yes                    ;
+; mestados_p:C1|Bus1_Sel[0]                           ; mestados_p:C1|EDO.Decode ; yes                    ;
+; mestados_p:C1|Bus1_Sel[1]                           ; mestados_p:C1|EDO.Decode ; yes                    ;
+; mestados_p:C1|ALU_Select[3]                         ; mestados_p:C1|WideOr25   ; yes                    ;
+; mestados_p:C1|ALU_Select[1]                         ; mestados_p:C1|WideOr25   ; yes                    ;
+; mestados_p:C1|ALU_Select[0]                         ; mestados_p:C1|WideOr25   ; yes                    ;
+; mestados_p:C1|Bus2_Sel[0]                           ; mestados_p:C1|EDO.Decode ; yes                    ;
+; mestados_p:C1|ALU_Select[2]                         ; mestados_p:C1|WideOr25   ; yes                    ;
+; mestados_p:C1|Bus2_Sel[1]                           ; mestados_p:C1|EDO.Decode ; yes                    ;
+; mestados_p:C1|MAR_Load                              ; mestados_p:C1|EDO.Decode ; yes                    ;
+; mestados_p:C1|PC_Load                               ; mestados_p:C1|EDO.Decode ; yes                    ;
+; mestados_p:C1|PC_Inc                                ; mestados_p:C1|EDO.Decode ; yes                    ;
+; mestados_p:C1|A_Load                                ; mestados_p:C1|EDO.Decode ; yes                    ;
+; mestados_p:C1|B_Load                                ; mestados_p:C1|EDO.Decode ; yes                    ;
+; mestados_p:C1|IR_Load                               ; mestados_p:C1|EDO.Decode ; yes                    ;
+; mestados_p:C1|CCR_Load                              ; mestados_p:C1|EDO.Decode ; yes                    ;
+; Number of user-specified and inferred latches = 16  ;                          ;                        ;
++-----------------------------------------------------+--------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; data_path:C2|regs:CR|CCR_reg[2]       ; Stuck at GND due to stuck port data_in ;
+; mestados_p:C1|EDO.JCC1_Z              ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 2 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 86    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 8     ;
+; Number of registers using Asynchronous Clear ; 86    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 43    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |process_unit|data_path:C2|PC:C1|cuenta[4] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |process_unit|data_path:C2|Mux7            ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |process_unit|data_path:C2|ALU:C2|Add0     ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |process_unit|data_path:C2|ALU:C2|Add0     ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |process_unit|data_path:C2|ALU:C2|Add0     ;
+; 13:1               ; 7 bits    ; 56 LEs        ; 35 LEs               ; 21 LEs                 ; No         ; |process_unit|data_path:C2|Mux10           ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; No         ; |process_unit|data_path:C2|ALU:C2|Add0     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "data_path:C2"                                                                         ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; flags  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; bus1_1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; bus2_2 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; pc_c   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; a_a    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; b_b    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------+
+; Port Connectivity Checks: "mestados_p:C1" ;
++-------+-------+----------+----------------+
+; Port  ; Type  ; Severity ; Details        ;
++-------+-------+----------+----------------+
+; start ; Input ; Info     ; Stuck at VCC   ;
++-------+-------+----------+----------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Wed May 15 00:05:59 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off process_unit -c process_unit
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file /users/eduardo/desktop/logica_progra/procesador_8bits/data_path/data_path.vhd
+    Info (12022): Found design unit 1: data_path-RTL File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/data_path/data_path.vhd Line: 18
+    Info (12023): Found entity 1: data_path File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/data_path/data_path.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /users/eduardo/desktop/logica_progra/procesador_8bits/regs/regs.vhd
+    Info (12022): Found design unit 1: regs-ARC File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/regs/regs.vhd Line: 15
+    Info (12023): Found entity 1: regs File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/regs/regs.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /users/eduardo/desktop/logica_progra/procesador_8bits/pc/pc.vhd
+    Info (12022): Found design unit 1: PC-ARC File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/pc/pc.vhd Line: 16
+    Info (12023): Found entity 1: PC File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/pc/pc.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /users/eduardo/desktop/logica_progra/procesador_8bits/mestados_p/mestados_p.vhd
+    Info (12022): Found design unit 1: mestados_p-ARC File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 14
+    Info (12023): Found entity 1: mestados_p File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /users/eduardo/desktop/logica_progra/procesador_8bits/alu/alu.vhd
+    Info (12022): Found design unit 1: ALU-Behavioral File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/ALU/ALU.vhd Line: 14
+    Info (12023): Found entity 1: ALU File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/ALU/ALU.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file process_unit.vhd
+    Info (12022): Found design unit 1: process_unit-RTL File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/process_unit/process_unit.vhd Line: 13
+    Info (12023): Found entity 1: process_unit File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/process_unit/process_unit.vhd Line: 4
+Info (12127): Elaborating entity "process_unit" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at process_unit.vhd(47): object "BUUUS1" assigned a value but never read File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/process_unit/process_unit.vhd Line: 47
+Warning (10036): Verilog HDL or VHDL warning at process_unit.vhd(47): object "BUUUS2" assigned a value but never read File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/process_unit/process_unit.vhd Line: 47
+Warning (10036): Verilog HDL or VHDL warning at process_unit.vhd(47): object "PCCC" assigned a value but never read File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/process_unit/process_unit.vhd Line: 47
+Warning (10036): Verilog HDL or VHDL warning at process_unit.vhd(47): object "AAA" assigned a value but never read File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/process_unit/process_unit.vhd Line: 47
+Warning (10036): Verilog HDL or VHDL warning at process_unit.vhd(47): object "BBB" assigned a value but never read File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/process_unit/process_unit.vhd Line: 47
+Warning (10036): Verilog HDL or VHDL warning at process_unit.vhd(48): object "NZVC" assigned a value but never read File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/process_unit/process_unit.vhd Line: 48
+Info (12128): Elaborating entity "mestados_p" for hierarchy "mestados_p:C1" File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/process_unit/process_unit.vhd Line: 52
+Warning (10492): VHDL Process Statement warning at mestados_p.vhd(27): signal "RST" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 27
+Warning (10492): VHDL Process Statement warning at mestados_p.vhd(41): signal "Start" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 41
+Warning (10631): VHDL Process Statement warning at mestados_p.vhd(307): inferring latch(es) for signal or variable "IR_Load", which holds its previous value in one or more paths through the process File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 307
+Warning (10631): VHDL Process Statement warning at mestados_p.vhd(307): inferring latch(es) for signal or variable "MAR_Load", which holds its previous value in one or more paths through the process File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 307
+Warning (10631): VHDL Process Statement warning at mestados_p.vhd(307): inferring latch(es) for signal or variable "PC_Load", which holds its previous value in one or more paths through the process File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 307
+Warning (10631): VHDL Process Statement warning at mestados_p.vhd(307): inferring latch(es) for signal or variable "PC_Inc", which holds its previous value in one or more paths through the process File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 307
+Warning (10631): VHDL Process Statement warning at mestados_p.vhd(307): inferring latch(es) for signal or variable "A_Load", which holds its previous value in one or more paths through the process File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 307
+Warning (10631): VHDL Process Statement warning at mestados_p.vhd(307): inferring latch(es) for signal or variable "B_Load", which holds its previous value in one or more paths through the process File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 307
+Warning (10631): VHDL Process Statement warning at mestados_p.vhd(307): inferring latch(es) for signal or variable "CCR_Load", which holds its previous value in one or more paths through the process File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 307
+Warning (10631): VHDL Process Statement warning at mestados_p.vhd(307): inferring latch(es) for signal or variable "Bus2_Sel", which holds its previous value in one or more paths through the process File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 307
+Warning (10631): VHDL Process Statement warning at mestados_p.vhd(307): inferring latch(es) for signal or variable "Bus1_Sel", which holds its previous value in one or more paths through the process File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 307
+Warning (10631): VHDL Process Statement warning at mestados_p.vhd(307): inferring latch(es) for signal or variable "ALU_Select", which holds its previous value in one or more paths through the process File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 307
+Warning (10631): VHDL Process Statement warning at mestados_p.vhd(307): inferring latch(es) for signal or variable "wr", which holds its previous value in one or more paths through the process File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 307
+Info (10041): Inferred latch for "wr" at mestados_p.vhd(307) File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 307
+Info (10041): Inferred latch for "ALU_Select[0]" at mestados_p.vhd(307) File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 307
+Info (10041): Inferred latch for "ALU_Select[1]" at mestados_p.vhd(307) File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 307
+Info (10041): Inferred latch for "ALU_Select[2]" at mestados_p.vhd(307) File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 307
+Info (10041): Inferred latch for "ALU_Select[3]" at mestados_p.vhd(307) File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 307
+Info (10041): Inferred latch for "Bus1_Sel[0]" at mestados_p.vhd(307) File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 307
+Info (10041): Inferred latch for "Bus1_Sel[1]" at mestados_p.vhd(307) File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 307
+Info (10041): Inferred latch for "Bus2_Sel[0]" at mestados_p.vhd(307) File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 307
+Info (10041): Inferred latch for "Bus2_Sel[1]" at mestados_p.vhd(307) File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 307
+Info (10041): Inferred latch for "CCR_Load" at mestados_p.vhd(307) File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 307
+Info (10041): Inferred latch for "B_Load" at mestados_p.vhd(307) File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 307
+Info (10041): Inferred latch for "A_Load" at mestados_p.vhd(307) File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 307
+Info (10041): Inferred latch for "PC_Inc" at mestados_p.vhd(307) File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 307
+Info (10041): Inferred latch for "PC_Load" at mestados_p.vhd(307) File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 307
+Info (10041): Inferred latch for "MAR_Load" at mestados_p.vhd(307) File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 307
+Info (10041): Inferred latch for "IR_Load" at mestados_p.vhd(307) File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 307
+Info (12128): Elaborating entity "data_path" for hierarchy "data_path:C2" File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/process_unit/process_unit.vhd Line: 58
+Info (12128): Elaborating entity "PC" for hierarchy "data_path:C2|PC:C1" File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/data_path/data_path.vhd Line: 55
+Info (12128): Elaborating entity "ALU" for hierarchy "data_path:C2|ALU:C2" File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/data_path/data_path.vhd Line: 56
+Warning (10492): VHDL Process Statement warning at ALU.vhd(53): signal "TempResult" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/ALU/ALU.vhd Line: 53
+Warning (10492): VHDL Process Statement warning at ALU.vhd(54): signal "TempResult" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/ALU/ALU.vhd Line: 54
+Warning (10492): VHDL Process Statement warning at ALU.vhd(60): signal "TempResult" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/ALU/ALU.vhd Line: 60
+Warning (10492): VHDL Process Statement warning at ALU.vhd(62): signal "TempResult" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/ALU/ALU.vhd Line: 62
+Warning (10631): VHDL Process Statement warning at ALU.vhd(18): inferring latch(es) for signal or variable "Flags", which holds its previous value in one or more paths through the process File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/ALU/ALU.vhd Line: 18
+Info (10041): Inferred latch for "Flags[0]" at ALU.vhd(18) File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/ALU/ALU.vhd Line: 18
+Info (12128): Elaborating entity "regs" for hierarchy "data_path:C2|regs:CR" File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/data_path/data_path.vhd Line: 57
+Warning (13012): Latch mestados_p:C1|ALU_Select[3] has unsafe behavior File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 307
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mestados_p:C1|EDO.ADD_AB File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 21
+Warning (13012): Latch mestados_p:C1|ALU_Select[1] has unsafe behavior File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 307
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mestados_p:C1|EDO.ADD_AB File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 21
+Warning (13012): Latch mestados_p:C1|ALU_Select[0] has unsafe behavior File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 307
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mestados_p:C1|EDO.ADD_AB File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 21
+Warning (13012): Latch mestados_p:C1|ALU_Select[2] has unsafe behavior File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 307
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mestados_p:C1|EDO.ADD_AB File: C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/mestados_p/mestados_p.vhd Line: 21
+Info (21057): Implemented 298 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
+    Info (21059): Implemented 17 output pins
+    Info (21061): Implemented 271 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 33 warnings
+    Info: Peak virtual memory: 4769 megabytes
+    Info: Processing ended: Wed May 15 00:06:13 2024
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:27
+
+

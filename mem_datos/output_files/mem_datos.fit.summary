@@ -1,0 +1,11 @@
+Fitter Status : Successful - Mon Apr 22 10:47:30 2024
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : mem_datos
+Top-level Entity Name : mem_datos
+Family : MAX II
+Device : EPM2210F256C3
+Timing Models : Final
+Total logic elements : 1,024 / 2,210 ( 46 % )
+Total pins : 25 / 204 ( 12 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

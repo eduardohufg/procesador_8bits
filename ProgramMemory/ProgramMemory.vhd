@@ -45,8 +45,13 @@ architecture Arc of ProgramMemory is
     signal ROM: ProgramMemory := (
         0 => LOAD_DIR_A,
         1 => x"F0",
-        2 => STORE_A,
-        3 => x"E0",
+		  2 => LOAD_iNM_B,
+		  3 => X"02",
+		  4 => ADD_AB,
+		  5 => STORE_A,
+		  6 => X"E0",
+		  7 => JMP,
+		  8 => X"00",
         
         OTHERS => x"00"
     );

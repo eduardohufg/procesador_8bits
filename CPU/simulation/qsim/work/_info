@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/CPU/simulation/qsim
 Ecpu
-Z1 w1715961410
+Z1 w1716220236
 Z2 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 g8;l:a_bzlE?3R3d7zk3Z0
 Z3 DPx10 cycloneive 21 cycloneive_components 0 22 Yj^f[Ven<H;0LiK:6PWEg0
 Z4 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
@@ -27,9 +27,9 @@ V>V>g02?l=7om0BH=3B0b@3
 !s100 A:B1]DQC;=dc4>4cbI_[R1
 Z12 OV;C;10.5b;63
 32
-Z13 !s110 1715961413
+Z13 !s110 1716220237
 !i10b 1
-Z14 !s108 1715961413.000000
+Z14 !s108 1716220237.000000
 Z15 !s90 -work|work|CPU.vho|
 Z16 !s107 CPU.vho|
 !i113 1
@@ -47,8 +47,8 @@ R9
 DEx4 work 3 cpu 0 22 >V>g02?l=7om0BH=3B0b@3
 l1456
 L379
-VB>W?>9A[J;`nAiO_=:G>h0
-!s100 dU_V^Ge0>RGlMMJT4R_TP0
+ViI;43NZ8lLT`13=?AFfdK0
+!s100 hCEJBFPaJ?MMLC^NHGBLZ2
 R12
 32
 R13
@@ -60,7 +60,7 @@ R16
 R17
 R18
 Ecpu_vhd_vec_tst
-Z19 w1715961408
+Z19 w1716220234
 R7
 R8
 R0
@@ -72,29 +72,29 @@ Vc6a:X_Z[;7ckbMGcA6;Mk3
 !s100 Ad:;LA9HMBdjFGcZPldj<3
 R12
 32
-Z22 !s110 1715961414
+Z22 !s110 1716220238
 !i10b 1
-Z23 !s108 1715961414.000000
-Z24 !s90 -work|work|CPU.vwf.vht|
-Z25 !s107 CPU.vwf.vht|
+R14
+Z23 !s90 -work|work|CPU.vwf.vht|
+Z24 !s107 CPU.vwf.vht|
 !i113 1
 R17
 R18
 Acpu_arch
 R7
 R8
-Z26 DEx4 work 15 cpu_vhd_vec_tst 0 22 c6a:X_Z[;7ckbMGcA6;Mk3
+Z25 DEx4 work 15 cpu_vhd_vec_tst 0 22 c6a:X_Z[;7ckbMGcA6;Mk3
 l108
 L33
-Z27 V?mdNOG7iVL6`46`k8`8[<3
-Z28 !s100 n;;HmeYQ2j]>L6g=dH?_S1
+Z26 VaEl7U`ZzimLZ=j[AS6G:^2
+Z27 !s100 K^C45NQk:Y7]K9z[<DTOi0
 R12
 32
 R22
 !i10b 1
+R14
 R23
 R24
-R25
 !i113 1
 R17
 R18

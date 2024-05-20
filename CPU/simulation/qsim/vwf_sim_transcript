@@ -25,7 +25,7 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Fri May 17 09:56:47 2024
+    Info: Processing started: Mon May 20 09:50:33 2024
 Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off CPU -c CPU --vector_source=C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/CPU/CPU.vwf --testbench_file=C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/CPU/simulation/qsim/CPU.vwf.vht
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
@@ -53,13 +53,13 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Fri May 17 09:56:49 2024
+    Info: Processing started: Mon May 20 09:50:35 2024
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/CPU/simulation/qsim/ CPU -c CPU
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file CPU.vho in folder "C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/CPU/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4638 megabytes
-    Info: Processing ended: Fri May 17 09:56:50 2024
+    Info: Processing ended: Mon May 20 09:50:36 2024
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
@@ -81,11 +81,10 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 
 
 # do CPU.do
-
 # ** Warning: (vlib-34) Library already exists at "work".
 
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 09:56:53 on May 17,2024
+# Start time: 09:50:37 on May 20,2024
 # vcom -work work CPU.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -101,23 +100,22 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # -- Compiling entity CPU
 # -- Compiling architecture structure of CPU
 
-# End time: 09:56:54 on May 17,2024, Elapsed time: 0:00:01
+# End time: 09:50:37 on May 20,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-
-# Start time: 09:56:54 on May 17,2024
+# Start time: 09:50:37 on May 20,2024
 # vcom -work work CPU.vwf.vht 
+
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
-
 # -- Loading package std_logic_1164
 # -- Compiling entity CPU_vhd_vec_tst
 # -- Compiling architecture CPU_arch of CPU_vhd_vec_tst
-# End time: 09:56:54 on May 17,2024, Elapsed time: 0:00:00
+# End time: 09:50:38 on May 20,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 
 # vsim -novopt -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.CPU_vhd_vec_tst 
-# Start time: 09:56:55 on May 17,2024
+# Start time: 09:50:38 on May 20,2024
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -144,9 +142,11 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # Expect performance to be adversely affected.
 # after#35
 
-# Simulation time: 265000 ps
+# Simulation time: 208000 ps
 
-# End time: 09:57:00 on May 17,2024, Elapsed time: 0:00:05
+# Simulation time: 208000 ps
+
+# End time: 09:50:44 on May 20,2024, Elapsed time: 0:00:06
 # Errors: 0, Warnings: 1
 
 Completed successfully. 
@@ -159,7 +159,7 @@ Reading C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/CPU/simulation/q
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/CPU/simulation/qsim/CPU_20240517095700.sim.vwf
+Writing the resulting VWF to C:/Users/Eduardo/Desktop/Logica_Progra/procesador_8bits/CPU/simulation/qsim/CPU_20240520095045.sim.vwf
 
 Finished VCD to VWF conversion.
 

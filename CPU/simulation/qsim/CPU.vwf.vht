@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/17/2024 09:56:48"
+-- Generated on "05/20/2024 09:50:34"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          CPU
 -- 
@@ -183,7 +183,7 @@ END PROCESS t_prcs_port_in_00_4;
 -- port_in_00[3]
 t_prcs_port_in_00_3: PROCESS
 BEGIN
-	port_in_00(3) <= '1';
+	port_in_00(3) <= '0';
 WAIT;
 END PROCESS t_prcs_port_in_00_3;
 -- port_in_00[2]
@@ -231,7 +231,7 @@ END PROCESS t_prcs_port_in_01_4;
 -- port_in_01[3]
 t_prcs_port_in_01_3: PROCESS
 BEGIN
-	port_in_01(3) <= '1';
+	port_in_01(3) <= '0';
 WAIT;
 END PROCESS t_prcs_port_in_01_3;
 -- port_in_01[2]
@@ -243,7 +243,7 @@ END PROCESS t_prcs_port_in_01_2;
 -- port_in_01[1]
 t_prcs_port_in_01_1: PROCESS
 BEGIN
-	port_in_01(1) <= '1';
+	port_in_01(1) <= '0';
 WAIT;
 END PROCESS t_prcs_port_in_01_1;
 -- port_in_01[0]
